@@ -22,12 +22,28 @@ import proStart from '../assets/programowanie/start_background.png'
 import proShadow from '../assets/programowanie/title_shadow.png'
 import proCorrect from '../assets/programowanie/correct-btn.png'
 import proPlay from '../assets/programowanie/prog_play-btn.png'
+//Global imports
+import chooseBackground from '../assets/choose_background.png'
+import culIcon from '../assets/hand-icon.png'
+import hisIcon from '../assets/his_icon.png'
+import progIcon from '../assets/prog_icon.png'
+import quizIcon from '../assets/quiz_icon.png'
+import quizLogo from '../assets/quiz_logo.png'
+
 
 
 
 const data =  [
     {
         categories: ['his', 'kul', 'tech'],
+        mainAssets: {
+            'chooseBackground': chooseBackground,
+            'culIcon': culIcon,
+            'hisIcon': hisIcon,
+            'progIcon': progIcon,
+            'quizIcon': quizIcon,
+            'quizLogo': quizLogo
+        },
         his: {
            assets: {
                'dragBG': hisDrag,
