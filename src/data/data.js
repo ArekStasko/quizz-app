@@ -53,6 +53,7 @@ const data =  [
                'shadow': hisShadow,
                'quiz_correct': hisCorrect,
                'quiz_play-btn': hisPlay,
+               'border': 'rgb(230, 228, 228)',
                'active-btn': 'linear-gradient(29deg, rgba(18,15,14,1) 14%, rgba(96,83,75,1) 45%, rgba(184,165,142,1) 79%);',
                'non_active-btn': 'linear-gradient(17deg, rgba(13,11,10,1) 21%, rgba(98,85,77,1) 47%, rgba(187,167,144,1) 75%);'
            },
@@ -163,8 +164,9 @@ const data =  [
                 'shadow': culShadow,
                 'quiz_correct': culCorrect,
                 'quiz_play-btn': culPlay,
-                'active-btn': 'background: linear-gradient(90deg, rgba(202,202,202,1) 21%, rgba(106,106,106,1) 77%);',
-                'non_active-btn': ' background: linear-gradient(90deg, rgba(106,106,106,1) 21%, rgba(202,202,202,1) 79%);'
+                'border': 'rgb(248, 248, 250)',
+                'active-btn': 'linear-gradient(90deg, rgba(202,202,202,1) 21%, rgba(106,106,106,1) 77%);',
+                'non_active-btn': ' linear-gradient(90deg, rgba(106,106,106,1) 21%, rgba(202,202,202,1) 79%);'
             },
             question: {
                 '1': {
@@ -267,6 +269,7 @@ const data =  [
                 'shadow': proShadow,
                 'quiz_correct': proCorrect,
                 'quiz_play-btn': proPlay,
+                'border': 'rgb(143, 108, 209)',
                 'active-btn': 'linear-gradient(90deg, rgba(178,54,140,1) 45%, rgba(59,31,87,1) 83%);',
                 'non_active-btn': 'linear-gradient(30deg, rgba(44,24,70,1) 33%, rgba(81,46,121,1) 83%);'
             },

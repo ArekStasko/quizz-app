@@ -1,0 +1,107 @@
+.main_start-container{
+width: 100%;
+height: 100vh;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+font-weight: 300;
+
+.main_start-wrapper{
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 100;
+
+    .cross-link{
+        font-size: 50px;
+        color: white;
+        align-self: flex-end;
+    }
+    
+
+    .start_logo-wrapper{
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+.quiz_start-logo{
+    background-image: url('../../../../assets/quiz_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 60px;
+}
+
+.quiz_start-header{
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 50px;
+    font-size: pxToRem(20);
+}
+
+.start_category-wrapper{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+
+    .start-icon{
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    }
+
+    .start-title{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 5px;
+        div{
+            width: 150px;
+            height: 1px;
+            background-color: rgb(248, 73, 179);
+        }
+
+        p{
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.start-btn{
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    div{
+        width: 50px;
+        height: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+}
+}
