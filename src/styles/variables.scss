@@ -1,0 +1,36 @@
+/* Colors */ 
+$c-black: #000;
+$c-white: #eeee;
+$c-pancho: #ecc4a4;
+$c-pancho-opacity: rgba(236, 196, 164, 0.5);
+$c-grayNickel-opacity: rgba(199, 199, 198, 0.8);
+$c-desertSand: #ECC4A9;
+
+/* Fonts */
+
+$f-baseFontFamily: "Roboto", sans-serif;
+$f-weight-xs: 100;
+$f-weight-sm: 300;
+$f-weight-md: 400;
+$f-weight-lg: 500;
+$f-weight-xl: 900;
+
+/* Breaks */
+
+$break-mobile: 1024px;
+$break-laptop: 1025px;
+$break-high: 1441px;
+
+/* Grid */
+
+$wrapper-xs: 30%;
+$wrapper: 50%;
+$wrapper-m: 60%;
+$wrapper-l: 70%;
+$wrapper-xl: 80%;
+$wrapper-xxl: 90%;
+$wrapper-full: 100%;
+
+/* Margins, Paddings */
+
+$space-zero: 0px;

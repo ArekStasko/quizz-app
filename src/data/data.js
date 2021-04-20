@@ -35,16 +35,16 @@ import quizLogo from '../assets/quiz_logo.png'
 
 const data =  [
     {
-        categories: ['his', 'kul', 'tech'],
+        categories: ['Historia', 'Kultura', 'Programowanie'],
         mainAssets: {
             'chooseBackground': chooseBackground,
-            'culIcon': culIcon,
-            'hisIcon': hisIcon,
-            'progIcon': progIcon,
+            'Kultura': culIcon,
+            'Historia': hisIcon,
+            'Programowanie': progIcon,
             'quizIcon': quizIcon,
             'quizLogo': quizLogo
         },
-        his: {
+        Historia: {
            assets: {
                'dragBG': hisDrag,
                'scoreBG': hisScore,
@@ -154,7 +154,7 @@ const data =  [
             }
            }
         },
-        kul: {
+        Kultura: {
             assets: {
                 'dragBG': culDrag,
                 'scoreBG': culScore,
@@ -258,7 +258,7 @@ const data =  [
                 }
             }
         },
-        prog: {
+        Programowanie: {
             assets: {
                 'dragBG': proDrag,
                 'scoreBG': proScore,
@@ -268,7 +268,7 @@ const data =  [
                 'quiz_correct': proCorrect,
                 'quiz_play-btn': proPlay,
                 'active-btn': 'linear-gradient(90deg, rgba(178,54,140,1) 45%, rgba(59,31,87,1) 83%);',
-                'non_active-btn': 'background: linear-gradient(30deg, rgba(44,24,70,1) 33%, rgba(81,46,121,1) 83%);'
+                'non_active-btn': 'linear-gradient(30deg, rgba(44,24,70,1) 33%, rgba(81,46,121,1) 83%);'
             },
             question: {
                 '1': {

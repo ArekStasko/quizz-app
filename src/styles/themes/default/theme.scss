@@ -1,0 +1,9 @@
+@import '../../variables';
+@import '../../fonts';
+@import '../../global';
+@import '../../mixins';
+
+/* import components styles */
+
+@import './components/mainPage.scss';
+@import './components/quizLayout.scss';
