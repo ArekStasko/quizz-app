@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import data from "../data/data";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import data from "../data/data";
+import QuestionLayout from './questionLayout'
 
 const StartWrapper = styled.div`
   background-image: url(${({ category }) => data[0][category].assets["startBG"]});
 `;
 
 const StartShadow = styled.div`
-  background-image: url(${({ category }) => data[0][category].assets["shadow"]}); 
+  background-image: url(${({ category }) => data[0][category].assets["shadow"]});
 `;
 
 const StartIcon = styled.div`
@@ -41,13 +42,15 @@ const QuizLayout = () => {
   let { category } = useParams();
 
   return (
-    <div>
+    <>
       {show ? (
         <StartWrapper category={category} className="main_start-container">
           <div className="main_start-wrapper">
-          <Link to='/' className='cross-link'>&#215;</Link>
+            <Link to="/" className="cross-link">
+              &#215;
+            </Link>
             <div className="start_logo-wrapper">
-                <div className="quiz_start-logo"></div>
+              <div className="quiz_start-logo"></div>
               <StartShadow category={category} className="quiz_start-header">
                 <p>WYBRANA KATEGORIA:</p>
               </StartShadow>
@@ -60,21 +63,24 @@ const QuizLayout = () => {
               </div>
             </div>
 
-            <StartBtn onClick={()=>setShow(!show)} category={category} className="start-btn">
+            <StartBtn
+              onClick={() => setShow(!show)}
+              category={category}
+              className="start-btn"
+            >
               <p>ROZPOCZNIJ</p>
               <div></div>
             </StartBtn>
           </div>
         </StartWrapper>
       ) : (
-        <div>
-          <p>lol</p>
-        </div>
+        <>
+          <QuestionLayout category={category} />
+        </>
       )}
-    </div>
+    </>
   );
 };
 
 export default QuizLayout;
 
-//{data[0][category].question['1'].questionText}

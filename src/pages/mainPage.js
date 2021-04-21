@@ -26,6 +26,7 @@ const MainPage = () => {
             <div className='main_categories-container'>
                 {
                     data[0].categories.map(item => {
+        
                         const param = '/quiz' + `/${item}`
 
                         return(
