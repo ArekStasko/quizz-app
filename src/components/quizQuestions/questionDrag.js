@@ -67,7 +67,7 @@ const QuestionDrag = ({ props }) => {
               category={props.category}
               className="select_shadow-text"
             >
-              SELECT THE CORRECT ANSWER
+              DRAG &#38; DROP THE RIGHT ANSWER
             </SelectShadow>
             <QuestionNumber
               category={props.category}

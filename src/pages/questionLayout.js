@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import QuestionDrag from '../components/quizQuestions/questionDrag'
 import QuestionSelect from '../components/quizQuestions/questionSelect'
+import QuestionScore from '../components/quizScore/questionScore'
 
 const QuestionLayout = ({category}) => {
 
@@ -16,7 +17,6 @@ let props = {
 }
 
 
-
     return(
 <>
     {
@@ -27,9 +27,7 @@ let props = {
         <QuestionSelect props={props} />
         )
         : (
-            <div>
-                <h1>Koniec</h1>
-            </div>
+           <QuestionScore props={props}/>
         )
     }
 </>

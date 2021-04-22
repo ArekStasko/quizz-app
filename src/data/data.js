@@ -287,7 +287,7 @@ const data =  [
                     questionText: 'Where is the correct place to insert a JavaScript ?',
                     answers: [
                         {answer: 'The body section', correct: true},
-                        {answer: 'Both the head section and the body are correct', correct: false},
+                        {answer: 'Both sections are corect', correct: false},
                         {answer: 'The head section', correct: false},
                     ]
                 },

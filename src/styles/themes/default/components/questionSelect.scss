@@ -9,14 +9,6 @@
     justify-content: flex-start;
     align-items: center;
 
-
-    .cross-link{
-        font-size: 50px;
-        color: white;
-        align-self: flex-end;
-        font-weight: 100;
-    }
-
     .select_main-wrapper{
         width: 60%;
         height: 70%;
@@ -121,6 +113,7 @@
                     .select_question-wrapper{
                      width: 280px;
                      height: 60px;
+                     margin: 10px;
                     }
                 }
            } 

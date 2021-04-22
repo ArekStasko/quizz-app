@@ -72,13 +72,15 @@ const QuestionSelect = ({ props }) => {
 
         <div className="select_question-container">
           {data[0][props.category].question[props.quest].answers.map((item) => (
-            <Question 
+            <Question
               key={item.answer}
               category={props.category}
               className="select_question-wrapper"
-              onClick={()=>{
-                  props.setQuest(props.quest + 1)
-                  item.correct ? ( props.setScore(props.score + 1) ) : (props.setScore(props.score + 0) )
+              onClick={() => {
+                props.setQuest(props.quest + 1);
+                item.correct
+                  ? props.setScore(props.score + 1)
+                  : props.setScore(props.score + 0);
               }}
             >
               <p>{item.answer}</p>

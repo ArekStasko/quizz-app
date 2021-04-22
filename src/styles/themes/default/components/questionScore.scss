@@ -1,0 +1,19 @@
+.score_main-container{
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .select_quiz-logo{
+      background-image: url("../../../../assets/quiz_logo.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 200px;
+      height: 60px;
+    }
+}
