@@ -110,10 +110,9 @@ const QuestionDrag = ({ props }) => {
               >
                 {data[0][props.category].question[props.quest].answers.map(
                   (item, index) => (
-                    <Draggable draggableId={item.answer} index={index}>
+                    <Draggable  key={item.answer} draggableId={item.answer} index={index}>
                       {(provided) => (
                         <Question
-                          key={item.answer}
                           category={props.category}
                           className="select_question-wrapper"
                           {...provided.draggableProps}
