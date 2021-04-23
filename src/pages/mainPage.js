@@ -27,7 +27,7 @@ const MainPage = () => {
                 {
                     data[0].categories.map(item => {
         
-                        const param = '/quiz' + `/${item}`
+                        const param = '/quiz/' + item
 
                         return(
                             <Link key={item} to={param} className='main_category-wrapper'>

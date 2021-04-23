@@ -1,6 +1,6 @@
 body, html{
-    font-family: 'Roboto', sans-serif;
-    color: white;
+    font-family: $f-baseFontFamily;
+    color: $c-white;
     width: 100%;
     height: 100%;
 }
@@ -22,9 +22,9 @@ a{
 
 .cross-link {
     font-size: 50px;
-    color: white;
+    color: $c-white;
     align-self: flex-end;
-    font-weight: 100;
+    font-weight: $f-weight-xs;
   }
 
 @media (max-width: 425px){

@@ -74,7 +74,7 @@ const QuestionScore = ({ props }) => {
                 props.setQuest(1);
                 props.setScore(0);
               }}
-              to={"/quiz" + `/${props.category}`}
+              to={"/quiz/" + `${props.category}`}
               className="repeat_btn-link"
             >
               <p>POWTÓRZ QUIZ</p>
@@ -92,7 +92,7 @@ const QuestionScore = ({ props }) => {
 
           <div className="categories-wrapper">
             {data[0].categories.map((item) => {
-              const param = "/quiz" + `/${item}`;
+              const param = "/quiz/" + item;
               return (
                 <Btn
                   key={item}

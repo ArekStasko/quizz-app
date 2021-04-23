@@ -3,13 +3,13 @@
   height: 100vh;
   @include createBg(center, no-repeat, cover);
   @include createFlex(flex, flex-start, center, column);
-  font-weight: 300;
+  font-weight: $f-weight-sm;
 
   .main_start-wrapper {
     width: 50%;
     height: 70%;
     @include createFlex(flex, space-evenly, center, column);
-    font-weight: 100;
+    font-weight: $f-weight-xs;
 
     .start_logo-wrapper {
       height: 30%;
@@ -46,7 +46,7 @@
         div {
           width: 150px;
           height: 1px;
-          background-color: rgb(248, 73, 179);
+          background-color: $-c-pink;
         }
 
         p {
@@ -72,7 +72,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $break-mobile) {
   .main_start-container {
     .main_start-wrapper {
       .quiz_start-logo {

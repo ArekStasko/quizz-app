@@ -4,7 +4,7 @@
     border-radius: 10px;
 }
 
-@media (max-width: 768px){
+@media (max-width: $break-mobile){
     .drop_place{
         width: 300px;
         min-height: 90px;
