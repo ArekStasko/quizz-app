@@ -1,3 +1,37 @@
 @function pxToRem($pxsize, $rembase: 16) {
     @return ($pxsize / $rembase) + rem;
 }
+
+@mixin boxShadow($arg) {
+    -webkit-box-shadow: $arg;
+    box-shadow: $arg;
+ }
+
+@mixin createBg(
+    $pos,
+    $rep,
+    $siz,
+){
+background-position: $pos;
+background-repeat: $rep;
+background-size: $siz;
+}
+
+@mixin createFlex(
+    $display: false,
+    $justify: false,
+    $align: false,
+    $flexDirection: false,
+) {
+    @if $flexDirection {
+        display: $display;
+        flex-direction: $flexDirection;
+        justify-content: $justify;
+        align-items: $align;
+    }
+    @if $display{
+        display: $display;
+        justify-content: $justify;
+        align-items: $align;
+    }
+}

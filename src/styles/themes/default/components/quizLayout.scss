@@ -1,69 +1,47 @@
 .main_start-container {
   width: 100%;
   height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  @include createBg(center, no-repeat, cover);
+  @include createFlex(flex, flex-start, center, column);
   font-weight: 300;
 
   .main_start-wrapper {
     width: 50%;
     height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    @include createFlex(flex, space-evenly, center, column);
     font-weight: 100;
 
     .start_logo-wrapper {
       height: 30%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
+      @include createFlex(flex, space-evenly, center, column);
     }
 
     .quiz_start-logo {
       background-image: url("../../../../assets/quiz_logo.png");
-      background-repeat: no-repeat;
-      background-size: contain;
+      @include createBg(center, no-repeat, contain);
       width: 200px;
       height: 60px;
     }
 
     .quiz_start-header {
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include createBg(center, no-repeat, cover);
+      @include createFlex(flex, center, center);
       width: 600px;
       height: 50px;
       font-size: pxToRem(20);
     }
 
     .start_category-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include createFlex(flex, center, center, column);
 
       .start-icon {
-        background-repeat: no-repeat;
-        background-size: contain;
+        @include createBg(center, no-repeat, contain);
         width: 50px;
         height: 50px;
       }
 
       .start-title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include createFlex(flex, center, center, column);
         margin-top: 5px;
         div {
           width: 150px;
@@ -80,9 +58,7 @@
 
     .start-btn {
       width: 250px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      @include createFlex(flex, space-around, center);
       padding: 10px;
       border-radius: 10px;
       cursor: pointer;
@@ -90,9 +66,7 @@
       div {
         width: 50px;
         height: 50px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        @include createBg(center, no-repeat, cover);
       }
     }
   }
