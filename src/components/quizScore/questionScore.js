@@ -94,9 +94,15 @@ const QuestionScore = ({ props }) => {
         </div>
 
         <div className="categories">
-          <Link to="/" className="cross-link">
-            &#215;
-          </Link>
+        <div className="links">
+          <Link to="/" className="links__back">
+              &#8735;
+            </Link>
+            <Link to="/" className="links__cross">
+              &#215;
+            </Link>
+            </div>
+
 
           <p>WYBIERZ INNĄ KATEGORIĘ</p>
 

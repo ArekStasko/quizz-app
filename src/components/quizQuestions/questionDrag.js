@@ -45,9 +45,10 @@ const QuestionDrag = ({ props }) => {
   const onDragEnd = (result) => {
     const { destination, source } = result;
 
-    if (destination) {
+
+    if (destination && destination.droppableId === "answerdrop") {
       data[0][props.category].question[props.quest].answers[source.index].correct  ? (setBg('correct')) : (setBg('incorrect'))
-      
+    
       setTimeout(()=> {
         setBg('non_active-btn')
         props.setQuest(props.quest + 1);
@@ -56,7 +57,10 @@ const QuestionDrag = ({ props }) => {
         : 
         (props.setScore(props.score + 0) )
       }, 1000)
+    } else {
+      return;
     }
+
   };
 
   return (
@@ -65,9 +69,15 @@ const QuestionDrag = ({ props }) => {
       className="select"
     >
       <div className="select__wrapper">
-        <Link to="/" className="cross-link">
-          &#215;
-        </Link>
+      <div className="links">
+          <Link to="/" className="links__back">
+              &#8735;
+            </Link>
+            <Link to="/" className="links__cross">
+              &#215;
+            </Link>
+            </div>
+
 
         <div className="header">
           <div className="header__logo"></div>
@@ -104,8 +114,9 @@ const QuestionDrag = ({ props }) => {
                   className="drop_place"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
-                ></DropPlace>
-                {provided.placeholder}
+                >
+                  {provided.placeholder}
+                </DropPlace>
               </>
             )}
           </Droppable>

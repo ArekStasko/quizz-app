@@ -76,6 +76,30 @@
 
     .categories {
       @include createFlex(flex, space-between, none, column);
+
+      .links{
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-end;
+          
+    
+          &__back{
+            font-size: 30px;
+            margin-top: 5px;
+            color: $c-white;
+            font-weight: $f-weight-xs;
+            transform: rotate(45deg);    
+          }
+    
+          &__cross{
+            font-size: 50px;
+            color: $c-white;
+            align-self: flex-end;
+            font-weight: $f-weight-xs;
+          }
+        }
      
     &__wrapper {
       &--btn {

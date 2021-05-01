@@ -51,9 +51,14 @@ const QuizLayout = () => {
       {show ? (
         <StartWrapper category={category} className="start">
           <div className="wrapper">
-            <Link to="/" className="cross-link">
+            <div className="wrapper__links">
+          <Link to="/" className="wrapper__links--back">
+              &#8735;
+            </Link>
+            <Link to="/" className="wrapper__links--cross">
               &#215;
             </Link>
+            </div>
             <div className="wrapper__logo">
               <div className="wrapper__logo--logo"></div>
               <StartShadow category={category} className="wrapper__logo--header">

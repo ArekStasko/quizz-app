@@ -7,7 +7,6 @@
   font-weight: $f-weight-xs;
 
   &__wrapper {
-    height: 60%;
     @include createFlex(flex, space-evenly, center, column);
   }
 
@@ -35,6 +34,7 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    justify-content: center;
 
   &__wrapper {
     cursor: pointer;

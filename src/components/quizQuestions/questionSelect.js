@@ -45,9 +45,14 @@ const QuestionSelect = ({ props }) => {
       className="select"
     >
       <div className="select__wrapper">
-        <Link to="/" className="cross-link">
-          &#215;
-        </Link>
+      <div className="links">
+          <Link to="/" className="links__back">
+              &#8735;
+            </Link>
+            <Link to="/" className="links__cross">
+              &#215;
+            </Link>
+            </div>
 
         <div className="header">
           <div className="header__logo"></div>
