@@ -18,21 +18,26 @@ const ScoreIcon = styled.div`
 `;
 
 const ScoreShadow = styled.div`
-  background-image: url(${({ category }) => data[0][category].assets["shadow"]});
+  background: ${({ category }) => data[0][category].assets["shadow"]};
 `;
+
+const Line = styled.div`
+background-color: ${({ category }) => data[0][category].assets["border"]};
+`
 
 const Btn = styled.div`
   background: ${({ category }) => data[0][category].assets["non_active-btn"]};
   border: 1px solid ${({ category }) => data[0][category].assets["border"]};
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
-  transition: all 300ms linear;
+  transition: all 500ms linear;
+  background-size: 150%;
 
   :hover {
     background: ${({ category }) => data[0][category].assets["active-btn"]};
     box-shadow: 2px 2px 10px 0px
       ${({ category }) => data[0][category].assets["border"]};
-    transform: scale(1.1);
+    background-size: 100%;
   }
 
   .play-btn {
@@ -45,59 +50,64 @@ const Icon = styled.div`
 `;
 
 const QuestionScore = ({ props }) => {
+
+  const checkCategory = cat => {
+    return cat !== props.category;
+  }
+
   return (
-    <ScoreContainer category={props.category} className="score_main-container">
-      <div className="score_main-wrapper">
-        <div className="select_score-wrapper">
-          <div className="select_quiz-logo"></div>
+    <ScoreContainer category={props.category} className="score">
+      <div className="wrapper">
+        <div className="select">
+          <div className="select__logo"></div>
           <ScoreIcon
             category={props.category}
-            className="score_icon"
+            className="select__icon"
           ></ScoreIcon>
-          <div className="select_line"></div>
-          <div className="select_category-name">
+          <Line category={props.category} className="select__line"></Line>
+          <div className="select__category">
             {props.category.toUpperCase()}
           </div>
 
-          <div className="score-wrapper">
-            <ScoreShadow category={props.category} className="score-shadow">
+          <div className="select__result">
+            <ScoreShadow category={props.category} className="select__result--shadow">
               TWÓJ WYNIK
             </ScoreShadow>
-            <Score category={props.category} className="score">
-              <p>{props.score}/10</p>
+            <Score category={props.category} className="select__result--result">
+              <p>{props.score}&#47;10</p>
             </Score>
           </div>
 
-          <Btn category={props.category} className="repeat-btn">
+          <Btn category={props.category} className="select__btn">
             <Link
               onClick={() => {
                 props.setQuest(1);
                 props.setScore(0);
               }}
               to={"/quiz/" + `${props.category}`}
-              className="repeat_btn-link"
+              className="select__btn--link"
             >
               <p>POWTÓRZ QUIZ</p>
-              <div className="play-btn"></div>
+              <div className='play-btn'></div>
             </Link>
           </Btn>
         </div>
 
-        <div className="select_categories-wrapper">
+        <div className="categories">
           <Link to="/" className="cross-link">
             &#215;
           </Link>
 
           <p>WYBIERZ INNĄ KATEGORIĘ</p>
 
-          <div className="categories-wrapper">
-            {data[0].categories.map((item) => {
+          <div className="categories__wrapper">
+            {data[0].categories.filter(checkCategory).map((item) => {
               const param = "/quiz/" + item;
               return (
                 <Btn
                   key={item}
                   category={props.category}
-                  className="category-btn"
+                  className="categories__wrapper--btn"
                 >
                   <Link
                     onClick={() => {
@@ -106,10 +116,10 @@ const QuestionScore = ({ props }) => {
                     }}
                     to={param}
                   >
-                    <Icon className="category-icon" item={item}></Icon>
+                    <Icon className="categories__wrapper--btn--icon" item={item}></Icon>
                     <div>
-                      <div className="category-line"></div>
-                      <p className="category-text">{item}</p>
+                      <Line category={props.category} className="categories__wrapper--btn--line"></Line>
+                      <p className="categories__wrapper--btn--text">{item}</p>
                     </div>
                   </Link>
                 </Btn>

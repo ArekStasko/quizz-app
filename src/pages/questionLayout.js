@@ -19,7 +19,7 @@ let props = {
 
     return(
 <>
-    {
+{
         quest === 10 ? (
         <QuestionDrag props={props} />
         )

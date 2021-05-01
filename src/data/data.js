@@ -3,30 +3,38 @@ import hisDrag from '../assets/historia/drag_background.png'
 import hisScore from '../assets/historia/score_background.png'
 import hisSelect from '../assets/historia/select_background.png'
 import hisStart from '../assets/historia/his_start.png'
-import hisShadow from '../assets/historia/his_shadow.png'
 import hisPlay from '../assets/historia/his_play-btn.png'
-import hisCorrect from '../assets/historia/quiz_correct.png'
 //Culture imports 
 import culDrag from '../assets/kultura/drag_background.png'
 import culScore from '../assets/kultura/score_background.png'
 import culSelect from '../assets/kultura/select_background.png'
 import culStart from '../assets/kultura/start_background.png'
-import culShadow from '../assets/kultura/kul_shadow.png'
-import culCorrect from '../assets/kultura/quiz_correct.png'
 import culPlay from '../assets/kultura/quiz_play-btn.png'
 //Programming imports 
 import proDrag from '../assets/programowanie/drag_background.png'
 import proScore from '../assets/programowanie/score_background.png'
 import proSelect from '../assets/programowanie/select_background.png'
 import proStart from '../assets/programowanie/start_background.png'
-import proShadow from '../assets/programowanie/title_shadow.png'
-import proCorrect from '../assets/programowanie/correct-btn.png'
 import proPlay from '../assets/programowanie/prog_play-btn.png'
+//Motor imports 
+import motDrag from '../assets/motoryzacja/drag_background.png'
+import motScore from '../assets/motoryzacja/score_background.png'
+import motSelect from '../assets/motoryzacja/select_background.png'
+import motStart from '../assets/motoryzacja/start_background.png'
+import motPlay from '../assets/motoryzacja/mot_play-btn.png'
+//Tech imports 
+import techDrag from '../assets/technologia/drag_background.png'
+import techScore from '../assets/technologia/score_background.png'
+import techSelect from '../assets/technologia/select_background.png'
+import techStart from '../assets/technologia/start_background.png'
+import techPlay from '../assets/technologia/tech_play-btn.png'
 //Global imports
 import chooseBackground from '../assets/choose_background.png'
 import culIcon from '../assets/hand-icon.png'
 import hisIcon from '../assets/his_icon.png'
 import progIcon from '../assets/prog_icon.png'
+import motIcon from '../assets/mot_icon.png'
+import techIcon from '../assets/tech_icon.png'
 import quizIcon from '../assets/quiz_icon.png'
 import quizLogo from '../assets/quiz_logo.png'
 
@@ -35,12 +43,14 @@ import quizLogo from '../assets/quiz_logo.png'
 
 const data =  [
     {
-        categories: ['Historia', 'Kultura', 'Programowanie'],
+        categories: ['Historia', 'Kultura', 'Programowanie', 'Technologia', 'Motoryzacja'],
         mainAssets: {
             'chooseBackground': chooseBackground,
             'Kultura': culIcon,
             'Historia': hisIcon,
             'Programowanie': progIcon,
+            'Technologia': techIcon,
+            'Motoryzacja': motIcon,
             'quizIcon': quizIcon,
             'quizLogo': quizLogo
         },
@@ -50,12 +60,13 @@ const data =  [
                'scoreBG': hisScore,
                'selectBG': hisSelect,
                'startBG': hisStart,
-               'shadow': hisShadow,
-               'quiz_correct': hisCorrect,
+               'shadow': 'linear-gradient(90deg, rgba(164,146,127,0) 4%, rgba(164,146,127,0.7) 18%, rgba(164,146,127,0.7) 82%, rgba(164,146,127,0) 97%);',
                'quiz_play-btn': hisPlay,
                'border': 'rgb(230, 228, 228)',
                'active-btn': 'linear-gradient(29deg, rgba(18,15,14,1) 14%, rgba(96,83,75,1) 45%, rgba(184,165,142,1) 79%);',
-               'non_active-btn': 'linear-gradient(17deg, rgba(13,11,10,1) 21%, rgba(98,85,77,1) 47%, rgba(187,167,144,1) 75%);'
+               'non_active-btn': 'linear-gradient(17deg, rgba(13,11,10,1) 21%, rgba(98,85,77,1) 47%, rgba(187,167,144,1) 75%);',
+               'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
+               'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
            },
            question: {
             '1': {
@@ -150,9 +161,6 @@ const data =  [
                     {answer: 'The Falklands War', correct: false}
                 ]
             },
-            '11': {
-                questionText: 'End of the History section'
-            }
            }
         },
         Kultura: {
@@ -161,12 +169,13 @@ const data =  [
                 'scoreBG': culScore,
                 'selectBG': culSelect,
                 'startBG': culStart,
-                'shadow': culShadow,
-                'quiz_correct': culCorrect,
+                'shadow': 'linear-gradient(90deg, rgba(170,170,170,0) 4%, rgba(170,170,170,0.7) 18%, rgba(170,170,170,0.7) 82%, rgba(170,170,170,0) 97%);',
                 'quiz_play-btn': culPlay,
                 'border': 'rgb(248, 248, 250)',
                 'active-btn': 'linear-gradient(90deg, rgba(202,202,202,1) 21%, rgba(106,106,106,1) 77%);',
-                'non_active-btn': ' linear-gradient(90deg, rgba(106,106,106,1) 21%, rgba(202,202,202,1) 79%);'
+                'non_active-btn': ' linear-gradient(90deg, rgba(106,106,106,1) 21%, rgba(202,202,202,1) 79%);',
+                'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
+                'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
             },
             question: {
                 '1': {
@@ -255,9 +264,6 @@ const data =  [
                         {answer: 'Switzerland', correct: false}
                     ]
                 },
-                '11': {
-                    questionText: 'End of the culture section'
-                }
             }
         },
         Programowanie: {
@@ -266,12 +272,13 @@ const data =  [
                 'scoreBG': proScore,
                 'selectBG': proSelect,
                 'startBG': proStart,
-                'shadow': proShadow,
-                'quiz_correct': proCorrect,
+                'shadow': 'linear-gradient(90deg, rgba(77,43,114,0) 4%, rgba(77,43,114,0.6) 15%, rgba(77,43,114,0.6) 85%, rgba(77,43,114,0) 97%);',
                 'quiz_play-btn': proPlay,
                 'border': 'rgb(143, 108, 209)',
                 'active-btn': 'linear-gradient(90deg, rgba(178,54,140,1) 45%, rgba(59,31,87,1) 83%);',
-                'non_active-btn': 'linear-gradient(30deg, rgba(44,24,70,1) 33%, rgba(81,46,121,1) 83%);'
+                'non_active-btn': 'linear-gradient(30deg, rgba(44,24,70,1) 33%, rgba(81,46,121,1) 83%);',
+                'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
+                'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
             },
             question: {
                 '1': {
@@ -359,11 +366,213 @@ const data =  [
                         {answer: 'onchange', correct: false}
                     ]
                 },
-                '11': {
-                    questionText: 'end of programming section'
-                }
             }
-        }
+        },
+        Motoryzacja: {
+            assets: {
+                'dragBG': motDrag,
+                'scoreBG': motScore,
+                'selectBG': motSelect,
+                'startBG': motStart,
+                'quiz_play-btn': motPlay,
+                'shadow': 'linear-gradient(90deg, rgba(23,46,162,0) 4%, rgba(23,46,162,0.6) 18%, rgba(23,46,162,0.6) 82%, rgba(23,46,162,0) 97%);',
+                'border': 'rgb(255, 255, 255)',
+                'active-btn': 'linear-gradient(16deg, rgba(16,87,255,1) 55%, rgba(26,24,109,1) 100%);',
+                'non_active-btn': 'linear-gradient(16deg, rgba(11,15,54,1) 55%, rgba(17,80,238,1) 100%);',
+                'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
+                'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
+            },
+            question: {
+                '1': {
+                    questionText: 'Which of these is NOT a system within a car?',
+                    answers: [
+                        {answer: 'fuel', correct: false},
+                        {answer: 'exhaust', correct: false},
+                        {answer: 'yaw', correct: true},
+                        {answer: 'transmission', correct: false}
+                    ]
+                },
+                '2': {
+                    questionText: 'Alignment is an aspect of the _____ system.',
+                    answers: [
+                        {answer: 'steering', correct: true},
+                        {answer: 'fuel', correct: false},
+                        {answer: 'exhaust', correct: false},
+                        {answer: 'cooling', correct: false},
+                    ]
+                },
+                '3': {
+                    questionText: 'The external JavaScript file must contain the script tag.',
+                    answers: [
+                        {answer: 'false', correct: true},
+                        {answer: 'true', correct: false}
+                    ]
+                },
+                '4': {
+                    questionText: 'Most modern cars run on a ____-stroke gasoline engine.',
+                    answers: [
+                        {answer: 'four', correct: true},
+                        {answer: 'two', correct: false},
+                        {answer: 'eight', correct: false},
+                        {answer: 'six', correct: false}
+                    ]
+                },
+                '5': {
+                    questionText: 'Where does the four-stroke cycle take place?',
+                    answers: [
+                        {answer: 'in the carburetor', correct: false},
+                        {answer: 'in the starter motor', correct: false},
+                        {answer: 'in the cylinder', correct: true},
+                        {answer: 'in the radiator', correct: false}
+                    ]
+                },
+                '6': {
+                    questionText: 'Engine oil is rated by _____.',
+                    answers: [
+                        {answer: 'octane', correct: false},
+                        {answer: 'volume', correct: false},
+                        {answer: 'weight', correct: true},
+                        {answer: 'price', correct: false}
+                    ]
+                },
+                '7': {
+                    questionText: 'Disc and "drum" are words that apply to ____.',
+                    answers: [
+                        {answer: 'seats', correct: false},
+                        {answer: 'tires', correct: false},
+                        {answer: 'bushings', correct: false},
+                        {answer: 'brakes', correct: true}
+                    ]
+                },
+                '8': {
+                    questionText: 'A four-door car that seats four or more persons is usually called a ______.',
+                    answers: [
+                        {answer: 'either 2 or 3', correct: true},
+                        {answer: 'saloon car', correct: false},
+                        {answer: 'sedan', correct: false},
+                        {answer: 'family car', correct: false}
+                    ]
+                },
+                '9': {
+                    questionText: 'Except in rare cases, a coupe has two ____.',
+                    answers: [
+                        {answer: 'doors', correct: false},
+                        {answer: 'owners', correct: true}
+                    ]
+                },
+                '10': {
+                    questionText: 'Rack and pinion refers to ...',
+                    answers: [
+                        {answer: 'brakes', correct: false},
+                        {answer: 'steering', correct: true},
+                        {answer: 'the drivetrain', correct: false},
+                        {answer: 'the cooling system', correct: false}
+                    ]
+                },
+            }
+        },
+        Technologia: {
+            assets: {
+                'dragBG': techDrag,
+                'scoreBG': techScore,
+                'selectBG': techSelect,
+                'startBG': techStart,
+                'shadow': 'linear-gradient(90deg, rgba(54,32,84,0) 4%, rgba(54,32,84,0.6) 18%, rgba(54,32,84,0.6) 82%, rgba(54,32,84,0) 97%);',
+                'quiz_play-btn': techPlay,
+                'border': 'rgb(141, 39, 141)',
+                'active-btn': 'linear-gradient(90deg, rgba(144,38,141,1) 21%, rgba(15,16,54,1) 68%);',
+                'non_active-btn': 'linear-gradient(90deg, rgba(15,16,54,1) 21%, rgba(144,38,141,1) 68%);',
+                'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
+                'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
+            },
+            question: {
+                '1': {
+                    questionText: 'About how many computer languages are in use?',
+                    answers: [
+                        {answer: '20', correct: false},
+                        {answer: '5,000', correct: false},
+                        {answer: '50', correct: false},
+                        {answer: '2,000', correct: true}
+                    ]
+                },
+                '2': {
+                    questionText: 'Which of these is not an early computer?',
+                    answers: [
+                        {answer: 'NASA', correct: true},
+                        {answer: 'UNIVAC', correct: false},
+                        {answer: 'SAGE', correct: false},
+                    ]
+                },
+                '3': {
+                    questionText: 'Who founded Apple Computer?',
+                    answers: [
+                        {answer: 'Steve Jobs', correct: true},
+                        {answer: 'Bill Gates', correct: false}
+                    ]
+                },
+                '4': {
+                    questionText: 'Which of these is not a peripheral, in computer terms?',
+                    answers: [
+                        {answer: 'motherboard', correct: true},
+                        {answer: 'keyboard', correct: false},
+                        {answer: 'monitor', correct: false},
+                        {answer: 'mouse', correct: false}
+                    ]
+                },
+                '5': {
+                    questionText: 'Which of these is not one of the early “protocols,” or ways to use the Internet?',
+                    answers: [
+                        {answer: 'blogging', correct: true},
+                        {answer: 'gopher', correct: false},
+                        {answer: 'ftp', correct: false},
+                        {answer: 'telnet', correct: false}
+                    ]
+                },
+                '6': {
+                    questionText: 'What does the Internet prefix WWW stand for?',
+                    answers: [
+                        {answer: 'Worldwide Weather', correct: false},
+                        {answer: 'Wide Width Wickets', correct: false},
+                        {answer: 'World Wide Web', correct: true},
+                        {answer: 'Western Washington World', correct: false}
+                    ]
+                },
+                '7': {
+                    questionText: 'Which of these is not a kind of computer?',
+                    answers: [
+                        {answer: 'Apple', correct: false},
+                        {answer: 'Dell', correct: false},
+                        {answer: 'Lenovo', correct: false},
+                        {answer: 'Lada', correct: true}
+                    ]
+                },
+                '8': {
+                    questionText: 'What device, released in 1993, gave rise to the term personal digital assistant?',
+                    answers: [
+                        {answer: 'Newton MessagePad', correct: true},
+                        {answer: 'Microsoft Surface', correct: false},
+                        {answer: 'Palm Pilot', correct: false},
+                        {answer: 'iPhone', correct: false}
+                    ]
+                },
+                '9': {
+                    questionText: 'What is the name for a computer pointing device?',
+                    answers: [
+                        {answer: 'A monitor', correct: false},
+                        {answer: 'A mouse', correct: true}
+                    ]
+                },
+                '10': {
+                    questionText: 'A network designed to allow communication within an organization is called...',
+                    answers: [
+                        {answer: 'a browser', correct: false},
+                        {answer: 'an intranet', correct: true},
+                        {answer: 'The internet', correct: false},
+                        {answer: 'the World Wide Web', correct: false}
+                    ]
+                },
+            }
+        },
     }
 ]
 
