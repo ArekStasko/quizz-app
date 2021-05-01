@@ -1,62 +1,65 @@
-.main_start-container {
+.start {
   width: 100%;
   height: 100vh;
   @include createBg(center, no-repeat, cover);
   @include createFlex(flex, flex-start, center, column);
   font-weight: $f-weight-sm;
 
-  .main_start-wrapper {
+  .wrapper {
     width: 50%;
     height: 70%;
     @include createFlex(flex, space-evenly, center, column);
     font-weight: $f-weight-xs;
 
-    .start_logo-wrapper {
+    &__logo {
       height: 30%;
       @include createFlex(flex, space-evenly, center, column);
-    }
 
-    .quiz_start-logo {
-      background-image: url("../../../../assets/quiz_logo.png");
-      @include createBg(center, no-repeat, contain);
-      width: 200px;
-      height: 60px;
-    }
-
-    .quiz_start-header {
-      @include createBg(center, no-repeat, cover);
-      @include createFlex(flex, center, center);
-      width: 600px;
-      height: 50px;
-      font-size: pxToRem(20);
-    }
-
-    .start_category-wrapper {
-      @include createFlex(flex, center, center, column);
-
-      .start-icon {
+      &--logo {
+        background-image: url("../../../../assets/quiz_logo.png");
         @include createBg(center, no-repeat, contain);
-        width: 50px;
-        height: 50px;
+        width: 200px;
+        height: 60px;
       }
 
-      .start-title {
-        @include createFlex(flex, center, center, column);
-        margin-top: 5px;
-        div {
-          width: 150px;
-          height: 1px;
-          background-color: $-c-pink;
-        }
-
-        p {
-          margin-top: 5px;
-          margin-bottom: 0;
-        }
+      &--header {
+        @include createFlex(flex, center, center);
+        width: 600px;
+        height: 50px;
+        font-size: pxToRem(20);
       }
     }
 
-    .start-btn {
+      &__category {
+        @include createFlex(flex, center, center, column);
+
+        &--icon {
+          @include createBg(center, no-repeat, contain);
+          width: 50px;
+          height: 50px;
+        }
+
+        &--title {
+          @include createFlex(flex, center, center, column);
+          margin-top: 5px;
+          div {
+            width: 150px;
+            height: 1px;
+            margin-top: 5px;
+          }
+
+          p {
+            margin-top: 5px;
+            margin-bottom: 0;
+            font-size: pxToRem(20);
+          }
+        }
+
+      }
+  
+  
+
+    &__btn {
       width: 250px;
       @include createFlex(flex, space-around, center);
       padding: 10px;
@@ -72,16 +75,20 @@
   }
 }
 
-@media (max-width: $break-mobile) {
-  .main_start-container {
-    .main_start-wrapper {
-      .quiz_start-logo {
-        width: 100px;
-        height: 60px;
-      }
 
-      .quiz_start-header {
-        width: 300px;
+
+@media (max-width: $break-mobile) {
+  .start {
+    .wrapper {
+      &__logo {
+        &--logo {
+          width: 100px;
+          height: 60px;
+        }
+
+        &--header {
+          width: 300px;
+        }
       }
     }
   }

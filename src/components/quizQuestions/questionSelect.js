@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import data from "../../data/data";
@@ -14,75 +14,89 @@ const QuestionNumber = styled.div`
 `;
 
 const SelectShadow = styled.div`
-  background-image: url(${({ category }) => data[0][category].assets["shadow"]});
+  background: ${({ category }) => data[0][category].assets["shadow"]};
 `;
 
 const Question = styled.div`
-  background: ${({ category }) => data[0][category].assets["non_active-btn"]};
+  background: ${({ category }) => data[0][category].assets['non_active-btn']};
   border: 1px solid ${({ category }) => data[0][category].assets["border"]};
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
-  transition: all 300ms linear;
+  pointer-events: ${({ cur }) => cur};
+  transition: all 700ms linear;
+  background-size: 150%;
 
   :hover {
     background: ${({ category }) => data[0][category].assets["active-btn"]};
     box-shadow: 2px 2px 10px 0px
       ${({ category }) => data[0][category].assets["border"]};
-    transform: scale(1.1);
+    background-size: 100%;
+
   }
 `;
 
 const QuestionSelect = ({ props }) => {
+
+  const [cur, setCur] = useState("auto")
+
   return (
     <QuestionContainer
       category={props.category}
-      className="select_main-container"
+      className="select"
     >
-      <div className="select_main-wrapper">
+      <div className="select__wrapper">
         <Link to="/" className="cross-link">
           &#215;
         </Link>
 
-        <div className="select_header-wrapper">
-          <div className="select_quiz-logo"></div>
-          <div className="select_header-text">
+        <div className="header">
+          <div className="header__logo"></div>
+          <div className="header__text">
             <SelectShadow
               category={props.category}
-              className="select_shadow-text"
+              className="header__text--shadow"
             >
               SELECT THE CORRECT ANSWER
             </SelectShadow>
             <QuestionNumber
               category={props.category}
-              className="select_question-number"
+              className="header__text--number"
             >
               <p>
-                {props.quest}/<span>10</span>
+                {props.quest}&#47;<span>10</span>
               </p>
             </QuestionNumber>
           </div>
         </div>
 
-        <div className="select_question-text">
+        <div className="select__wrapper--question">
           <p>
             {props.quest}.{" "}
             {data[0][props.category].question[props.quest].questionText}
           </p>
         </div>
 
-        <div className="select_question-container">
+        <div className="answers">
           {data[0][props.category].question[props.quest].answers.map((item) => (
             <Question
               key={item.answer}
               category={props.category}
-              className="select_question-wrapper"
-              onClick={() => {
-                props.setQuest(props.quest + 1);
-                item.correct
-                  ? props.setScore(props.score + 1)
-                  : props.setScore(props.score + 0);
-              }}
-            >
+              cur={cur}
+              className="answers__text"
+              onClick={e=>{
+                setCur('none')
+                item.correct ? 
+                (e.target.style.background = data[0][props.category].assets['correct']) 
+                : 
+                (e.target.style.background = data[0][props.category].assets['incorrect'])
+                setTimeout(()=> {
+                  setCur('auto')
+                  props.setQuest(props.quest + 1);
+                  item.correct
+                    ? props.setScore(props.score + 1)
+                    : props.setScore(props.score + 0);
+                }, 1000)
+              }}>
               <p>{item.answer}</p>
               <div></div>
             </Question>

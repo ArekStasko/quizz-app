@@ -1,38 +1,37 @@
-.select_main-container {
+.select {
   width: 100%;
   height: 100vh;
   @include createBg(center, no-repeat, cover);
   @include createFlex(flex, flex-start, center, column);
 
-  .select_main-wrapper {
+  &__wrapper {
     width: 60%;
     height: 70%;
     @include createFlex(flex, space-between, center, column);
 
-    .select_header-wrapper {
+   .header {
       @include createFlex(flex, center, center, column);
-    }
+    
 
-    .select_quiz-logo {
+    &__logo {
       background-image: url("../../../../assets/quiz_logo.png");
       @include createBg(center, no-repeat, contain);
       width: 200px;
       height: 60px;
     }
 
-    .select_header-text {
+    &__text {
       width: 100%;
       @include createFlex(flex, center, center);
-    }
+    
 
-    .select_shadow-text {
+    &--shadow {
       width: 500px;
       height: 50px;
       @include createFlex(flex, center, center);
-      @include createBg(center, no-repeat, cover);
     }
 
-    .select_question-number {
+    &--number {
       width: 80px;
       height: 80px;
       border-radius: 60px;
@@ -45,49 +44,55 @@
         }
       }
     }
+   }
+  }
 
-    .select_question-text {
+    &--question {
       font-size: pxToRem(20);
     }
 
-    .select_question-container {
+    .answers {
       @include createFlex(flex, center, center);
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 
-      .select_question-wrapper {
+      &__text {
         cursor: pointer;
         width: 300px;
         height: 80px;
         margin: 15px;
         border-radius: 10px;
         @include createFlex(flex, center, center);
+
+        p{
+          pointer-events: none;
+        }
       }
     }
   }
 }
 
 @media (max-width: $break-mobile) {
-  .select_main-container {
-    .select_main-wrapper {
-      .select_header-wrapper {
-        .select_header-text {
+  .select {
+    &__wrapper {
+      .header {
+        &__text {
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
           -ms-flex-direction: column;
           flex-direction: column;
 
-          .select_shadow-text {
+          &--shadow {
             width: 300px;
             margin-bottom: 10px;
           }
         }
       }
 
-      .select_question-container {
-        .select_question-wrapper {
+      .answers {
+        &__text {
           width: 280px;
-          height: 60px;
+          height: 50px;
           margin: 10px;
         }
       }

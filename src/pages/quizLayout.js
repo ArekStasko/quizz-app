@@ -10,25 +10,30 @@ const StartWrapper = styled.div`
 `;
 
 const StartShadow = styled.div`
-  background-image: url(${({ category }) => data[0][category].assets["shadow"]});
+  background: ${({ category }) => data[0][category].assets["shadow"]};
 `;
 
 const StartIcon = styled.div`
   background-image: url(${({ category }) => data[0].mainAssets[category]});
 `;
 
+const Line = styled.div`
+background-color: ${({ category }) => data[0][category].assets["border"]};
+`
+
 const StartBtn = styled.div`
-  background: ${({ category }) => data[0][category].assets["active-btn"]};
+  background-image: ${({ category }) => data[0][category].assets["active-btn"]};
   border: 1px solid ${({ category }) => data[0][category].assets["border"]};
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
-  transition: all 300ms linear;
+  transition: all 800ms linear;
+  background-size: 150%;
 
   :hover {
-    background: ${({ category }) => data[0][category].assets["non_active-btn"]};
+    background-image: ${({ category }) => data[0][category].assets["non_active-btn"]};
     box-shadow: 2px 2px 10px 0px
       ${({ category }) => data[0][category].assets["border"]};
-    transform: scale(1.1);
+    background-size: 100%;
   }
 
   div {
@@ -44,21 +49,21 @@ const QuizLayout = () => {
   return (
     <>
       {show ? (
-        <StartWrapper category={category} className="main_start-container">
-          <div className="main_start-wrapper">
+        <StartWrapper category={category} className="start">
+          <div className="wrapper">
             <Link to="/" className="cross-link">
               &#215;
             </Link>
-            <div className="start_logo-wrapper">
-              <div className="quiz_start-logo"></div>
-              <StartShadow category={category} className="quiz_start-header">
-                <p>WYBRANA KATEGORIA:</p>
+            <div className="wrapper__logo">
+              <div className="wrapper__logo--logo"></div>
+              <StartShadow category={category} className="wrapper__logo--header">
+                <p>WYBRANA KATEGORIA&#58;</p>
               </StartShadow>
             </div>
-            <div className="start_category-wrapper">
-              <StartIcon category={category} className="start-icon"></StartIcon>
-              <div className="start-title">
-                <div></div>
+            <div className="wrapper__category">
+              <StartIcon category={category} className="wrapper__category--icon"></StartIcon>
+              <div className="wrapper__category--title">
+                <Line category={category}></Line>
                 <p>{category}</p>
               </div>
             </div>
@@ -66,7 +71,7 @@ const QuizLayout = () => {
             <StartBtn
               onClick={() => setShow(!show)}
               category={category}
-              className="start-btn"
+              className="wrapper__btn"
             >
               <p>ROZPOCZNIJ</p>
               <div></div>
