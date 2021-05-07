@@ -9,25 +9,25 @@
     width: 80%;
 
     .select {
-      @include createFlex(flex, space-between, center, column);
+      @include createFlex(flex, space-evenly, center, column);
       width: 70%;
       height: 100%;
 
       &__logo {
         background-image: url("../../../../assets/quiz_logo.png");
         @include createBg(center, no-repeat, contain);
-        width: 230px;
-        height: 70px;
+        width: 210px;
+        height: 60px;
       }
 
       &__icon {
         @include createBg(center, no-repeat, contain);
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
       }
 
       &__line {
-        width: 200px;
+        width: 185px;
         height: 1px;
       }
 
@@ -47,7 +47,7 @@
           height: 130px;
           @include createFlex(flex, center, center);
           border: 1px solid $c-white;
-          border-radius: 80px;
+          border-radius: 100%;
           font-size: pxToRem(25);
         }
       }
@@ -58,6 +58,7 @@
         border-radius: 10px;
         cursor: pointer;
         font-weight: $f-weight-xs;
+
 
         &--link {
           @include createFlex(flex, space-around, center);
@@ -86,7 +87,7 @@
           
     
           &__back{
-            font-size: 30px;
+            font-size: 28px;
             margin-top: 5px;
             color: $c-white;
             font-weight: $f-weight-xs;
@@ -104,12 +105,12 @@
     &__wrapper {
       &--btn {
         cursor: pointer;
-        width: 110px;
-        height: 110px;
+        width: 90px;
+        height: 90px;
         margin: 10px;
         border-radius: 10px;
         @include createFlex(flex, center, flex-start, column);
-        padding: 20px 20px 0px 20px;
+        padding: 20px 20px 5px 20px;
         color: $c-white;
 
         &--icon {
@@ -123,14 +124,14 @@
         }
 
         &--line {
-          width: 110px;
+          width: 95px;
           height: 1px;
         }
 
         &--text {
           color: $c-white;
           margin: 0;
-          font-size: pxToRem(17);
+          font-size: pxToRem(14);
         }
        }
       }
@@ -158,11 +159,13 @@
         &__logo {
           width: 190px;
           height: 50px;
+          top: 20px;
+          position: absolute;
         }
 
         &__icon {
-          width: 50px;
-          height: 50px;
+          width: 70px;
+          height: 70px;
         }
 
         &__result {
@@ -203,11 +206,16 @@
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          
 
           &--btn {
-            width: 65px;
-            height: 65px;
+            width: 75px;
+            height: 75px;
             margin: 5px;
+            padding: 15px 15px 5px 15px;
+
 
            &--icon {
               width: 40px;
@@ -219,10 +227,21 @@
             }
 
             &--text {
+              -webkit-text-size-adjust: none;
               font-size: pxToRem(10);
             }
           }
         }
+        .links{
+          width: 90%;
+          justify-content: space-between;
+          position: absolute;
+          top: 0;
+          left: 0; 
+          right: 0; 
+          margin-left: auto; 
+          margin-right: auto; 
+          }
       }
     }
   }
@@ -268,6 +287,15 @@
             }
           }
         }
+        .links{
+          width: 85%;
+          justify-content: space-between;
+          position: absolute;
+          left: 0; 
+          right: 0; 
+          margin-left: auto; 
+          margin-right: auto; 
+          }
       }
     }
   }

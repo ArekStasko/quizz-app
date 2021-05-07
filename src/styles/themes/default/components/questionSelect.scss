@@ -79,12 +79,27 @@
       flex-wrap: wrap;
 
       &__text {
+        position: relative;
+        z-index: 1;
         cursor: pointer;
         width: 300px;
         height: 80px;
         margin: 15px;
         border-radius: 10px;
         @include createFlex(flex, center, center);
+
+        &::before{
+          position: absolute;
+          z-index: -1;
+          content: "";
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border-radius: 10px;
+          transition: all 500ms linear;
+          opacity: 0;    
+        }
 
         p{
           pointer-events: none;
@@ -97,17 +112,29 @@
 @media (max-width: $break-mobile) {
   .select {
     &__wrapper {
+      width: 80%;
       .header {
-        &__text {
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-          flex-direction: column;
+        &__text { 
+          flex-direction: row;
 
           &--shadow {
-            width: 300px;
+            width: 180px;
             margin-bottom: 10px;
           }
+          &--number {
+            width: 60px;
+            height: 60px;
+            border-radius: 60px;
+            @include createFlex(flex, center, center);
+            border: 1px solid rgb(230, 228, 228);
+          }
+        }
+        &__logo {
+          z-index: 2;
+          position: absolute;
+          top: 20px;
+          width: 150px;
+          height: 40px;
         }
       }
 
@@ -116,8 +143,15 @@
           width: 280px;
           height: 50px;
           margin: 10px;
+
         }
       }
+
+      .links{
+        z-index: 1;
+        width: 95%;
+        justify-content: space-between;
     }
+   }
   }
 }

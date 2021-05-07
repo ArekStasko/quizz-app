@@ -6,16 +6,25 @@ import { DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
 
 const QuestionContainer = styled.div`
   background-image: url(${({ category }) => data[0][category].assets["dragBG"]});
+  @media (max-width: 768px) {
+    background-image: url(${({ category }) => data[0][category].mobile["bg3"]});
+  }
 `;
 
 const QuestionNumber = styled.div`
   background: ${({ category }) => data[0][category].assets["non_active-btn"]};
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
+    @media (max-width: 768px) {
+    background: ${({ category }) => data[0][category].mobile["active-btn"]};
+  }
 `;
 
 const SelectShadow = styled.div`
   background: ${({ category }) => data[0][category].assets["shadow"]};
+  @media (max-width: 768px) {
+    background: none;
+  }
 `;
 
 const DropPlace = styled.div`
@@ -28,13 +37,25 @@ const Question = styled.div`
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
   transition: all 700ms linear;
-  background-size: 150%;
+
+  &::before{
+    background: ${({ category }) => data[0][category].assets['active-btn']};
+    @media (max-width: 768px) {
+    background: none;
+  }
+    }
 
   :hover {
-    background: ${({ category }) => data[0][category].assets["active-btn"]};
-    box-shadow: 2px 2px 10px 0px
+    &::before{
+        opacity: 1;
+        @include boxShadow(2px 2px 10px 0px $-c-pink);
+        box-shadow: 2px 2px 10px 0px
       ${({ category }) => data[0][category].assets["border"]};
-    background-size: 100%;
+      }
+  }
+
+  @media (max-width: 768px) {
+    background: ${({ category, bg }) => data[0][category].mobile[bg]};
   }
 `;
 

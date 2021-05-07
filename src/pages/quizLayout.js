@@ -7,6 +7,9 @@ import QuestionLayout from './questionLayout'
 
 const StartWrapper = styled.div`
   background-image: url(${({ category }) => data[0][category].assets["startBG"]});
+  @media (max-width: 768px) {
+    background-image: url(${({ category }) => data[0][category].mobile["bg1"]});
+  }
 `;
 
 const StartShadow = styled.div`
@@ -22,22 +25,38 @@ background-color: ${({ category }) => data[0][category].assets["border"]};
 `
 
 const StartBtn = styled.div`
-  background-image: ${({ category }) => data[0][category].assets["active-btn"]};
+  background: ${({ category }) => data[0][category].assets["non_active-btn"]};
   border: 1px solid ${({ category }) => data[0][category].assets["border"]};
   box-shadow: 1px 1px 10px 0px
-    ${({ category }) => data[0][category].assets["border"]};
+  ${({ category }) => data[0][category].assets["border"]};
   transition: all 800ms linear;
-  background-size: 150%;
+
+  &::before{
+    background: ${({ category }) => data[0][category].assets["active-btn"]};
+    }
+
 
   :hover {
-    background-image: ${({ category }) => data[0][category].assets["non_active-btn"]};
-    box-shadow: 2px 2px 10px 0px
+    &::before{
+        opacity: 1;
+        @include boxShadow(2px 2px 10px 0px $-c-pink);
+        box-shadow: 2px 2px 10px 0px
       ${({ category }) => data[0][category].assets["border"]};
-    background-size: 100%;
+      }
+  }
+
+  @media (max-width: 768px) {
+    background: ${({ category }) => data[0][category].mobile["non_active-btn"]};
+    :hover{
+    background: ${({ category }) => data[0][category].mobile["active-btn"]};
+    }
   }
 
   div {
     background-image: url(${({ category }) => data[0][category].assets["quiz_play-btn"]});
+    @media (max-width: 768px) {
+    //background-image: url(${({ category }) => data[0][category].mobile["his_play-btn"]});
+  }
   }
 `;
 

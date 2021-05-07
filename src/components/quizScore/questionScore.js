@@ -5,12 +5,18 @@ import data from "../../data/data";
 
 const ScoreContainer = styled.div`
   background-image: url(${({ category }) => data[0][category].assets["scoreBG"]});
+  @media (max-width: 768px) {
+    background-image: url(${({ category }) => data[0][category].mobile["bg4"]});
+  }
 `;
 
 const Score = styled.div`
   background: ${({ category }) => data[0][category].assets["non_active-btn"]};
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
+    @media (max-width: 768px) {
+    background: ${({ category }) => data[0][category].mobile["non_active-btn"]};
+  }
 `;
 
 const ScoreIcon = styled.div`
@@ -26,18 +32,42 @@ background-color: ${({ category }) => data[0][category].assets["border"]};
 `
 
 const Btn = styled.div`
+  position: relative;
+  z-index: 1;
   background: ${({ category }) => data[0][category].assets["non_active-btn"]};
   border: 1px solid ${({ category }) => data[0][category].assets["border"]};
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
   transition: all 500ms linear;
-  background-size: 150%;
+
+  &::before{
+    background: ${({ category }) => data[0][category].assets["active-btn"]};
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: -1;
+    transition: all 500ms linear;
+    opacity: 0;    
+    }
 
   :hover {
-    background: ${({ category }) => data[0][category].assets["active-btn"]};
-    box-shadow: 2px 2px 10px 0px
+    &::before{
+        opacity: 1;
+        @include boxShadow(2px 2px 10px 0px $-c-pink);
+        box-shadow: 2px 2px 10px 0px
       ${({ category }) => data[0][category].assets["border"]};
-    background-size: 100%;
+      }
+  }
+
+  @media (max-width: 768px) {
+    background: ${({ category }) => data[0][category].mobile["non_active-btn"]};
+    :hover{
+    background: ${({ category }) => data[0][category].mobile["active-btn"]};
+    }
   }
 
   .play-btn {
@@ -84,7 +114,7 @@ const QuestionScore = ({ props }) => {
                 props.setQuest(1);
                 props.setScore(0);
               }}
-              to={"/quiz/" + `${props.category}`}
+              to={`/quiz/${props.category}`}
               className="select__btn--link"
             >
               <p>POWTÓRZ QUIZ</p>
@@ -108,7 +138,7 @@ const QuestionScore = ({ props }) => {
 
           <div className="categories__wrapper">
             {data[0].categories.filter(checkCategory).map((item) => {
-              const param = "/quiz/" + item;
+              const param = `/quiz/${item}`;
               return (
                 <Btn
                   key={item}
