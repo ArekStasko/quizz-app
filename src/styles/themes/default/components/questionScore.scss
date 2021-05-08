@@ -32,12 +32,17 @@
       }
 
       &__result {
-        width: 80%;
+        width: 75%;
+        margin: 30px 0px;
         @include createFlex(flex, flex-start, center);
 
         &--shadow {
           width: 350px;
           height: 45px;
+          z-index: 1;
+          position: absolute;
+          right: 55%;
+          z-index: 0;
           @include createFlex(flex, center, center);
           font-weight: $f-weight-xs;
         }
@@ -45,9 +50,12 @@
         &--result {
           width: 130px;
           height: 130px;
+          z-index: 1;
+          position: absolute;
+          right: 52%;
           @include createFlex(flex, center, center);
           border: 1px solid $c-white;
-          border-radius: 100%;
+          border-radius: 100px;
           font-size: pxToRem(25);
         }
       }
@@ -181,6 +189,11 @@
           &--result {
             width: 100px;
             height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            
           }
         }
 

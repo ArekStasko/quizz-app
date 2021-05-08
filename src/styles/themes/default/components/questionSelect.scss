@@ -22,6 +22,7 @@
         color: $c-white;
         font-weight: $f-weight-xs;
         transform: rotate(45deg);    
+        cursor: pointer;
       }
       &__cross{
         font-size: 50px;

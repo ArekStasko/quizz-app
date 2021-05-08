@@ -104,7 +104,7 @@ const QuizLayout = () => {
         </StartWrapper>
       ) : (
         <>
-          <QuestionLayout category={category} />
+          <QuestionLayout category={category} show={setShow} />
         </>
       )}
     </>

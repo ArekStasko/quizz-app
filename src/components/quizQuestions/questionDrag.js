@@ -91,9 +91,12 @@ const QuestionDrag = ({ props }) => {
     >
       <div className="select__wrapper">
       <div className="links">
-          <Link to="/" className="links__back">
+          <div onClick={()=>{
+            props.setScore(0);
+            props.setShow(true);
+          }} className="links__back">
               &#8735;
-            </Link>
+            </div>
             <Link to="/" className="links__cross">
               &#215;
             </Link>
