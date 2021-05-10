@@ -21,7 +21,7 @@ let props = {
     return(
 <>
     {
-           quest === 10 ? (
+          quest === 10 ? (
             <QuestionDrag props={props} />
             )
             : quest < 10 ? (
@@ -30,7 +30,6 @@ let props = {
             : (
                <QuestionScore props={props}/>
             )
-    
     }
 </>
     )
