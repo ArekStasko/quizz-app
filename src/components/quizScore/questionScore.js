@@ -19,6 +19,13 @@ const Score = styled.div`
   }
 `;
 
+const Gradient = styled.div`
+  @media (max-width: 768px) {
+    box-shadow: 0px -30px 90px 130px ${({ category }) => data[0][category].mobile['gradient']};
+    background: ${({ category }) => data[0][category].mobile['gradient']};
+  }
+`;
+
 const ScoreIcon = styled.div`
   background-image: url(${({ category }) => data[0].mainAssets[category]});
 `;
@@ -89,6 +96,7 @@ const QuestionScore = ({ props }) => {
     <ScoreContainer category={props.category} className="score">
       <div className="wrapper">
         <div className="select">
+        <Gradient category={props.category} className='select__gradient'></Gradient>
           <div className="select__logo"></div>
           <ScoreIcon
             category={props.category}

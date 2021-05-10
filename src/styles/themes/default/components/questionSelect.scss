@@ -137,6 +137,15 @@
           width: 150px;
           height: 40px;
         }
+
+        &__gradient{
+          z-index: 1;
+          position: absolute;
+          top: -150px;
+          width: 10%;
+          height: 150px;
+          opacity: 0.8;
+        }
       }
 
       .answers {
@@ -153,6 +162,21 @@
         width: 95%;
         justify-content: space-between;
     }
+   }
+  }
+}
+
+
+@media (max-width: $break-mobile-xs) {
+  .select {
+    &__wrapper {
+      .header {
+        &__gradient{
+          top: -150px;
+          box-shadow: 0px 0px 90px 90px #d9198f;
+          opacity: 0.8;
+        }
+      }
    }
   }
 }

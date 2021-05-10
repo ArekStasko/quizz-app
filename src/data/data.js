@@ -91,7 +91,9 @@ const data =  [
              'bg4': his4Bg,
              'his_play-btn': hisMobilePlay,
              'non_active-btn': 'linear-gradient(48deg, rgba(44,7,116,1) 4%, rgba(141,106,203,1) 97%);',
-             'active-btn': 'linear-gradient(48deg, rgba(152,118,210,1) 4%, rgba(46,7,119,1) 97%);'
+             'active-btn': 'linear-gradient(48deg, rgba(152,118,210,1) 4%, rgba(46,7,119,1) 97%);',
+             'gradient': '#040a9c',
+             'shadow': 'linear-gradient(90deg, rgba(4,10,156,0) 4%, rgba(4, 10, 156,0.7) 18%, rgba(4, 10, 156,0.7) 82%, rgba(4, 10, 156,0) 97%);',
            },
            question: {
             '1': {
@@ -208,7 +210,9 @@ const data =  [
                 'bg3': culDrag,
                 'bg4': culScore,
                 'color': 'linear-gradient(90deg, rgba(106,106,106,1) 21%, rgba(202,202,202,1) 79%);',
-                'color-active': 'linear-gradient(90deg, rgba(202,202,202,1) 21%, rgba(106,106,106,1) 77%);'
+                'color-active': 'linear-gradient(90deg, rgba(202,202,202,1) 21%, rgba(106,106,106,1) 77%);',
+                'gradient': '#979797',
+                'shadow': 'linear-gradient(90deg, rgba(151, 151, 151,0) 4%, rgba(151, 151, 151,0.7) 18%, rgba(151, 151, 151,0.7) 82%, rgba(151, 151, 151,0) 97%);',
               },
             question: {
                 '1': {
@@ -319,7 +323,9 @@ const data =  [
                 'bg3': proDrag,
                 'bg4': proScore,
                 'color': 'linear-gradient(30deg, rgba(44,24,70,1) 33%, rgba(81,46,121,1) 83%);',
-                'color-active': 'linear-gradient(90deg, rgba(178,54,140,1) 45%, rgba(59,31,87,1) 83%);'
+                'color-active': 'linear-gradient(90deg, rgba(178,54,140,1) 45%, rgba(59,31,87,1) 83%);',
+                'gradient': '#d9198f',
+                'shadow': 'linear-gradient(90deg, rgba(217, 25, 143,0) 4%, rgba(217, 25, 143,0.7) 18%, rgba(217, 25, 143,0.7) 82%, rgba(217, 25, 143,0) 97%);',
               },
             question: {
                 '1': {
@@ -358,9 +364,9 @@ const data =  [
                 '5': {
                     questionText: 'How do you create a function in JavaScript ?',
                     answers: [
-                        {answer: 'function = myFunction()', correct: true},
+                        {answer: 'function = myFunction()', correct: false},
                         {answer: 'function: myFunction()', correct: false},
-                        {answer: 'function myFunction()', correct: false},
+                        {answer: 'function myFunction()', correct: true},
                         {answer: 'function / myFunction()', correct: false}
                     ]
                 },
@@ -429,7 +435,9 @@ const data =  [
                 'bg3': mot3Bg,
                 'bg4': mot4Bg,
                 'color': ' linear-gradient(48deg, rgba(13,16,61,1) 4%, rgba(19,67,208,1) 97%);',
-                'color-active': 'linear-gradient(48deg, rgba(16,87,255,1) 4%, rgba(27,23,107,1) 97%);'
+                'color-active': 'linear-gradient(48deg, rgba(16,87,255,1) 4%, rgba(27,23,107,1) 97%);',
+                'gradient': '#040a9c',
+                'shadow': 'linear-gradient(90deg, rgba(4,10,156,0) 4%, rgba(4, 10, 156,0.7) 18%, rgba(4, 10, 156,0.7) 82%, rgba(4, 10, 156,0) 97%);',
               },
             question: {
                 '1': {
@@ -540,7 +548,9 @@ const data =  [
                 'bg3': tech3Bg,
                 'bg4': tech4Bg,
                 'color': 'linear-gradient(48deg, rgba(43,24,69,1) 4%, rgba(82,46,123,1) 97%)',
-                'color-active': 'linear-gradient(48deg, rgba(178,54,140,1) 4%, rgba(61,32,88,1) 97%);'
+                'color-active': 'linear-gradient(48deg, rgba(178,54,140,1) 4%, rgba(61,32,88,1) 97%);',
+                'gradient': '#d9198f',
+                'shadow': 'linear-gradient(90deg, rgba(217, 25, 143,0) 4%, rgba(217, 25, 143,0.7) 18%, rgba(217, 25, 143,0.7) 82%, rgba(217, 25, 143,0) 97%);',
               },
             question: {
                 '1': {

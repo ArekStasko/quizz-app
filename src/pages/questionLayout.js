@@ -20,8 +20,17 @@ let props = {
 
     return(
 <>
-{
-           <QuestionScore props={props}/>
+    {
+           quest === 10 ? (
+            <QuestionDrag props={props} />
+            )
+            : quest < 10 ? (
+            <QuestionSelect props={props} />
+            )
+            : (
+               <QuestionScore props={props}/>
+            )
+    
     }
 </>
     )
@@ -29,16 +38,3 @@ let props = {
 
 export default QuestionLayout
 
-/*
-
- quest === 10 ? (
-        <QuestionDrag props={props} />
-        )
-        : quest < 10 ? (
-        <QuestionSelect props={props} />
-        )
-        : (
-           <QuestionScore props={props}/>
-        )
-
-*/

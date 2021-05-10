@@ -22,7 +22,14 @@ const QuestionNumber = styled.div`
 const SelectShadow = styled.div`
   background: ${({ category }) => data[0][category].assets["shadow"]};
   @media (max-width: 768px) {
-    background: none;
+    background: ${({ category }) => data[0][category].mobile["shadow"]};
+  }
+`;
+
+const Gradient = styled.div`
+  @media (max-width: 768px) {
+    box-shadow: 0px -30px 90px 130px ${({ category }) => data[0][category].mobile['gradient']};
+    background: ${({ category }) => data[0][category].mobile['gradient']};
   }
 `;
 
@@ -81,6 +88,7 @@ const QuestionSelect = ({ props }) => {
             </div>
 
         <div className="header">
+          <Gradient category={props.category} className='header__gradient'></Gradient>
           <div className="header__logo"></div>
           <div className="header__text">
             <SelectShadow

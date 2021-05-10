@@ -12,8 +12,20 @@
       @include createFlex(flex, space-evenly, center, column);
       width: 70%;
       height: 100%;
+      
+      &__gradient{
+        z-index: 1;
+        position: absolute;
+        top: -150px;
+        width: 10%;
+        height: 150px;
+        box-shadow: 0px -30px 90px 130px #d9198f;
+        background: #d9198f;
+        opacity: 0.8;
+      }
 
       &__logo {
+        z-index: 2;
         background-image: url("../../../../assets/quiz_logo.png");
         @include createBg(center, no-repeat, contain);
         width: 210px;
@@ -266,6 +278,15 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+      
+    .select{
+      &__gradient{
+        top: -150px;
+        box-shadow: 0px 0px 90px 90px #d9198f;
+        opacity: 0.8;
+      }
+    }
+
       .categories {
         &__wrapper {
           display: -webkit-box;
