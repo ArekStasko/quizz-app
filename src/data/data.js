@@ -4,6 +4,12 @@ import hisScore from '../assets/historia/score_background.png'
 import hisSelect from '../assets/historia/select_background.png'
 import hisStart from '../assets/historia/his_start.png'
 import hisPlay from '../assets/historia/his_play-btn.png'
+//History mobile imports 
+import his1Bg from '../assets/historia/mobile/background_1.png'
+import his2Bg from '../assets/historia/mobile/background_2.png'
+import his3Bg from '../assets/historia/mobile/background_3.png'
+import his4Bg from '../assets/historia/mobile/background_4.png'
+import hisMobilePlay from '../assets/historia/mobile/his_play-btn.png'
 //Culture imports 
 import culDrag from '../assets/kultura/drag_background.png'
 import culScore from '../assets/kultura/score_background.png'
@@ -22,12 +28,22 @@ import motScore from '../assets/motoryzacja/score_background.png'
 import motSelect from '../assets/motoryzacja/select_background.png'
 import motStart from '../assets/motoryzacja/start_background.png'
 import motPlay from '../assets/motoryzacja/mot_play-btn.png'
+//Motor mobile imports 
+import mot1Bg from '../assets/motoryzacja/mobile/background_1.png'
+import mot2Bg from '../assets/motoryzacja/mobile/background_2.png'
+import mot3Bg from '../assets/motoryzacja/mobile/background_3.png'
+import mot4Bg from '../assets/motoryzacja/mobile/background_4.png'
 //Tech imports 
 import techDrag from '../assets/technologia/drag_background.png'
 import techScore from '../assets/technologia/score_background.png'
 import techSelect from '../assets/technologia/select_background.png'
 import techStart from '../assets/technologia/start_background.png'
 import techPlay from '../assets/technologia/tech_play-btn.png'
+//Tech mobile imports 
+import tech1Bg from '../assets/technologia/mobile/background_1.png'
+import tech2Bg from '../assets/technologia/mobile/background_2.png'
+import tech3Bg from '../assets/technologia/mobile/background_3.png'
+import tech4Bg from '../assets/technologia/mobile/background_4.png'
 //Global imports
 import chooseBackground from '../assets/choose_background.png'
 import culIcon from '../assets/hand-icon.png'
@@ -66,7 +82,18 @@ const data =  [
                'active-btn': 'linear-gradient(29deg, rgba(18,15,14,1) 14%, rgba(96,83,75,1) 45%, rgba(184,165,142,1) 79%);',
                'non_active-btn': 'linear-gradient(17deg, rgba(13,11,10,1) 21%, rgba(98,85,77,1) 47%, rgba(187,167,144,1) 75%);',
                'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
-               'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
+               'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)',
+           },
+           mobile: {
+             'bg1': his1Bg,
+             'bg2': his2Bg,
+             'bg3': his3Bg,
+             'bg4': his4Bg,
+             'his_play-btn': hisMobilePlay,
+             'non_active-btn': 'linear-gradient(48deg, rgba(44,7,116,1) 4%, rgba(141,106,203,1) 97%);',
+             'active-btn': 'linear-gradient(48deg, rgba(152,118,210,1) 4%, rgba(46,7,119,1) 97%);',
+             'gradient': '#040a9c',
+             'shadow': 'linear-gradient(90deg, rgba(4,10,156,0) 4%, rgba(4, 10, 156,0.7) 18%, rgba(4, 10, 156,0.7) 82%, rgba(4, 10, 156,0) 97%);',
            },
            question: {
             '1': {
@@ -177,6 +204,16 @@ const data =  [
                 'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
                 'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
             },
+            mobile: {
+                'bg1': culStart,
+                'bg2': culSelect,
+                'bg3': culDrag,
+                'bg4': culScore,
+                'color': 'linear-gradient(90deg, rgba(106,106,106,1) 21%, rgba(202,202,202,1) 79%);',
+                'color-active': 'linear-gradient(90deg, rgba(202,202,202,1) 21%, rgba(106,106,106,1) 77%);',
+                'gradient': '#979797',
+                'shadow': 'linear-gradient(90deg, rgba(151, 151, 151,0) 4%, rgba(151, 151, 151,0.7) 18%, rgba(151, 151, 151,0.7) 82%, rgba(151, 151, 151,0) 97%);',
+              },
             question: {
                 '1': {
                     questionText: 'In what country is it considered a compliment to slurp loudly while eating soup ?',
@@ -280,6 +317,16 @@ const data =  [
                 'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
                 'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
             },
+            mobile: {
+                'bg1': proStart,
+                'bg2': proSelect,
+                'bg3': proDrag,
+                'bg4': proScore,
+                'color': 'linear-gradient(30deg, rgba(44,24,70,1) 33%, rgba(81,46,121,1) 83%);',
+                'color-active': 'linear-gradient(90deg, rgba(178,54,140,1) 45%, rgba(59,31,87,1) 83%);',
+                'gradient': '#d9198f',
+                'shadow': 'linear-gradient(90deg, rgba(217, 25, 143,0) 4%, rgba(217, 25, 143,0.7) 18%, rgba(217, 25, 143,0.7) 82%, rgba(217, 25, 143,0) 97%);',
+              },
             question: {
                 '1': {
                     questionText: 'Inside which HTML element do we put the JavaScript ?',
@@ -317,9 +364,9 @@ const data =  [
                 '5': {
                     questionText: 'How do you create a function in JavaScript ?',
                     answers: [
-                        {answer: 'function = myFunction()', correct: true},
+                        {answer: 'function = myFunction()', correct: false},
                         {answer: 'function: myFunction()', correct: false},
-                        {answer: 'function myFunction()', correct: false},
+                        {answer: 'function myFunction()', correct: true},
                         {answer: 'function / myFunction()', correct: false}
                     ]
                 },
@@ -382,6 +429,16 @@ const data =  [
                 'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
                 'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
             },
+            mobile: {
+                'bg1': mot1Bg,
+                'bg2': mot2Bg,
+                'bg3': mot3Bg,
+                'bg4': mot4Bg,
+                'color': ' linear-gradient(48deg, rgba(13,16,61,1) 4%, rgba(19,67,208,1) 97%);',
+                'color-active': 'linear-gradient(48deg, rgba(16,87,255,1) 4%, rgba(27,23,107,1) 97%);',
+                'gradient': '#040a9c',
+                'shadow': 'linear-gradient(90deg, rgba(4,10,156,0) 4%, rgba(4, 10, 156,0.7) 18%, rgba(4, 10, 156,0.7) 82%, rgba(4, 10, 156,0) 97%);',
+              },
             question: {
                 '1': {
                     questionText: 'Which of these is NOT a system within a car?',
@@ -485,6 +542,16 @@ const data =  [
                 'correct': 'linear-gradient(56deg, rgba(25,224,24,1) 21%, rgba(39,149,8,1) 79%)',
                 'incorrect': 'linear-gradient(56deg, rgba(224,24,24,1) 21%, rgba(149,8,8,1) 79%)'
             },
+            mobile: {
+                'bg1': tech1Bg,
+                'bg2': tech2Bg,
+                'bg3': tech3Bg,
+                'bg4': tech4Bg,
+                'color': 'linear-gradient(48deg, rgba(43,24,69,1) 4%, rgba(82,46,123,1) 97%)',
+                'color-active': 'linear-gradient(48deg, rgba(178,54,140,1) 4%, rgba(61,32,88,1) 97%);',
+                'gradient': '#d9198f',
+                'shadow': 'linear-gradient(90deg, rgba(217, 25, 143,0) 4%, rgba(217, 25, 143,0.7) 18%, rgba(217, 25, 143,0.7) 82%, rgba(217, 25, 143,0) 97%);',
+              },
             question: {
                 '1': {
                     questionText: 'About how many computer languages are in use?',

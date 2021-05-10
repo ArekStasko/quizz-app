@@ -12,6 +12,7 @@ height: 45px;
 `
 
 
+
 const MainPage = () => {
 
     return(
@@ -20,7 +21,7 @@ const MainPage = () => {
 <div className='page__quiz-logo'></div>
 
 <div className='page__quiz-header'>
-    <p>10 PYTAŃ&#47;{data[0].categories.length} KATEGORIE</p>
+    <p>10 PYTAŃ&#47;{data[0].categories.length} KATEGORII</p>
 </div>
 
             <div className='categories'>

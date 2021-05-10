@@ -5,16 +5,32 @@ import data from "../../data/data";
 
 const QuestionContainer = styled.div`
   background-image: url(${({ category }) => data[0][category].assets["selectBG"]});
+  @media (max-width: 768px) {
+    background-image: url(${({ category }) => data[0][category].mobile["bg2"]});
+  }
 `;
 
 const QuestionNumber = styled.div`
   background: ${({ category }) => data[0][category].assets["non_active-btn"]};
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
+    @media (max-width: 768px) {
+    background: ${({ category }) => data[0][category].mobile["non_active-btn"]};
+  }
 `;
 
 const SelectShadow = styled.div`
   background: ${({ category }) => data[0][category].assets["shadow"]};
+  @media (max-width: 768px) {
+    background: ${({ category }) => data[0][category].mobile["shadow"]};
+  }
+`;
+
+const Gradient = styled.div`
+  @media (max-width: 768px) {
+    box-shadow: 0px -30px 90px 130px ${({ category }) => data[0][category].mobile['gradient']};
+    background: ${({ category }) => data[0][category].mobile['gradient']};
+  }
 `;
 
 const Question = styled.div`
@@ -24,14 +40,28 @@ const Question = styled.div`
     ${({ category }) => data[0][category].assets["border"]};
   pointer-events: ${({ cur }) => cur};
   transition: all 700ms linear;
-  background-size: 150%;
+
+  &::before{
+    background: ${({ category }) => data[0][category].assets['active-btn']};
+    @media (max-width: 768px) {
+    background: none;
+  }
+    }
 
   :hover {
-    background: ${({ category }) => data[0][category].assets["active-btn"]};
-    box-shadow: 2px 2px 10px 0px
+    &::before{
+        opacity: 1;
+        @include boxShadow(2px 2px 10px 0px $-c-pink);
+        box-shadow: 2px 2px 10px 0px
       ${({ category }) => data[0][category].assets["border"]};
-    background-size: 100%;
+      }
+  }
 
+  @media (max-width: 768px) {
+    background: ${({ category }) => data[0][category].mobile["non_active-btn"]};
+    :hover{
+    background: ${({ category }) => data[0][category].mobile["active-btn"]};
+    }
   }
 `;
 
@@ -45,11 +75,20 @@ const QuestionSelect = ({ props }) => {
       className="select"
     >
       <div className="select__wrapper">
-        <Link to="/" className="cross-link">
-          &#215;
-        </Link>
+      <div className="links">
+          <div onClick={()=>{
+            props.setScore(0);
+            props.setShow(true);
+          }} className="links__back">
+              &#8735;
+            </div>
+            <Link to="/" className="links__cross">
+              &#215;
+            </Link>
+            </div>
 
         <div className="header">
+          <Gradient category={props.category} className='header__gradient'></Gradient>
           <div className="header__logo"></div>
           <div className="header__text">
             <SelectShadow
@@ -90,6 +129,7 @@ const QuestionSelect = ({ props }) => {
                 : 
                 (e.target.style.background = data[0][props.category].assets['incorrect'])
                 setTimeout(()=> {
+                  e.target.style.background = data[0][props.category].assets['non_active-btn']
                   setCur('auto')
                   props.setQuest(props.quest + 1);
                   item.correct
