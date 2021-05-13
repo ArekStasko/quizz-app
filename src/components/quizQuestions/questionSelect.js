@@ -4,9 +4,9 @@ import styled from "styled-components";
 import data from "../../data/data";
 
 const QuestionContainer = styled.div`
-  background-image: url(${({ category }) => data[0][category].assets["selectBG"]});
+  background-image: url(${({ category }) =>data[0][category].assets["selectBG"]});
   @media (max-width: 768px) {
-    background-image: url(${({ category }) => data[0][category].mobile["bg2"]});
+   background-image: url(${({ category }) => data[0][category].mobile["bg2"]});
   }
 `;
 
@@ -14,7 +14,7 @@ const QuestionNumber = styled.div`
   background: ${({ category }) => data[0][category].assets["non_active-btn"]};
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
     background: ${({ category }) => data[0][category].mobile["non_active-btn"]};
   }
 `;
@@ -28,67 +28,86 @@ const SelectShadow = styled.div`
 
 const Gradient = styled.div`
   @media (max-width: 768px) {
-    box-shadow: 0px -30px 90px 130px ${({ category }) => data[0][category].mobile['gradient']};
-    background: ${({ category }) => data[0][category].mobile['gradient']};
+    box-shadow: 0px -30px 90px 130px ${({ category }) => data[0][category].mobile["gradient"]};
+    background: ${({ category }) => data[0][category].mobile["gradient"]};
   }
 `;
 
 const Question = styled.div`
-  background: ${({ category }) => data[0][category].assets['non_active-btn']};
+  background: ${({ category }) => data[0][category].assets["non_active-btn"]};
   border: 1px solid ${({ category }) => data[0][category].assets["border"]};
   box-shadow: 1px 1px 10px 0px
     ${({ category }) => data[0][category].assets["border"]};
   pointer-events: ${({ cur }) => cur};
   transition: all 700ms linear;
 
-  &::before{
-    background: ${({ category }) => data[0][category].assets['active-btn']};
+  &::before {
+    background: ${({ category }) => data[0][category].assets["active-btn"]};
     @media (max-width: 768px) {
-    background: none;
-  }
+      background: none;
     }
+  }
 
   :hover {
-    &::before{
-        opacity: 1;
-        @include boxShadow(2px 2px 10px 0px $-c-pink);
-        box-shadow: 2px 2px 10px 0px
-      ${({ category }) => data[0][category].assets["border"]};
-      }
+    &::before {
+      opacity: 1;
+      @include boxShadow(2px 2px 10px 0px $-c-pink);
+      box-shadow: 2px 2px 10px 0px
+        ${({ category }) => data[0][category].assets["border"]};
+    }
   }
 
   @media (max-width: 768px) {
     background: ${({ category }) => data[0][category].mobile["non_active-btn"]};
-    :hover{
-    background: ${({ category }) => data[0][category].mobile["active-btn"]};
+    :hover {
+      background: ${({ category }) => data[0][category].mobile["active-btn"]};
     }
   }
 `;
 
 const QuestionSelect = ({ props }) => {
+  const [cur, setCur] = useState("auto");
 
-  const [cur, setCur] = useState("auto")
+  const check = (e, item) => {
+    setCur("none");
+    item.correct
+      ? (e.target.style.background = data[0][props.category].assets["correct"])
+      : (e.target.style.background =
+          data[0][props.category].assets["incorrect"]);
+    setTimeout(() => {
+      e.target.style.background =
+        data[0][props.category].assets["non_active-btn"];
+      setCur("auto");
+      props.setQuest(props.quest + 1);
+      item.correct
+        ? props.setScore(props.score + 1)
+        : props.setScore(props.score + 0);
+    }, 1000);
+  };
 
   return (
-    <QuestionContainer
-      category={props.category}
-      className="select"
-    >
+    <QuestionContainer category={props.category} className="select">
       <div className="select__wrapper">
-      <div className="links">
-          <div onClick={()=>{
-            props.setScore(0);
-            props.setShow(true);
-          }} className="links__back">
-              &#8735;
-            </div>
-            <Link to="/" className="links__cross">
-              &#215;
-            </Link>
-            </div>
+        <div className="links">
+          <div
+            onClick={() => {
+              props.setScore(0);
+              props.setShow(true);
+            }}
+            className="links__back"
+          >
+            &#8735;
+          </div>
+          <Link to="/" className="links__cross">
+            &#215;
+          </Link>
+        </div>
 
         <div className="header">
-          <Gradient category={props.category} className='header__gradient'></Gradient>
+          <Gradient
+            category={props.category}
+            className="header__gradient"
+          ></Gradient>
           <div className="header__logo"></div>
           <div className="header__text">
             <SelectShadow
@@ -122,21 +141,8 @@ const QuestionSelect = ({ props }) => {
               category={props.category}
               cur={cur}
               className="answers__text"
-              onClick={e=>{
-                setCur('none')
-                item.correct ? 
-                (e.target.style.background = data[0][props.category].assets['correct']) 
-                : 
-                (e.target.style.background = data[0][props.category].assets['incorrect'])
-                setTimeout(()=> {
-                  e.target.style.background = data[0][props.category].assets['non_active-btn']
-                  setCur('auto')
-                  props.setQuest(props.quest + 1);
-                  item.correct
-                    ? props.setScore(props.score + 1)
-                    : props.setScore(props.score + 0);
-                }, 1000)
-              }}>
+              onClick={(e) => check(e, item)}
+            >
               <p>{item.answer}</p>
               <div></div>
             </Question>
