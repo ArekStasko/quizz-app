@@ -68,7 +68,6 @@
         cursor: pointer;
         font-weight: $f-weight-xs;
 
-
         &--link {
           @include createFlex(flex, space-around, center);
           color: $c-white;
@@ -78,74 +77,80 @@
             height: 50px;
             @include createBg(center, no-repeat, cover);
           }
-
         }
       }
     }
-    
 
     .categories {
       @include createFlex(flex, space-between, none, column);
 
-      .links{
+      .links {
         width: 100px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -ms-flex-item-align: end;
         align-self: flex-end;
-          
-    
-          &__back{
-            font-size: 28px;
-            margin-top: 5px;
-            color: $c-white;
-            font-weight: $f-weight-xs;
-            transform: rotate(45deg);    
-          }
-    
-          &__cross{
-            font-size: 50px;
-            color: $c-white;
-            align-self: flex-end;
-            font-weight: $f-weight-xs;
-          }
-        }
-     
-    &__wrapper {
-      &--btn {
-        cursor: pointer;
-        width: 90px;
-        height: 90px;
-        margin: 10px;
-        border-radius: 10px;
-        @include createFlex(flex, center, flex-start, column);
-        padding: 20px 20px 5px 20px;
-        color: $c-white;
 
-        &--icon {
-          @include createBg(center, no-repeat, contain);
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          width: 50px;
-          height: 50px;
-          margin-bottom: 10px;
-        }
-
-        &--line {
-          width: 95px;
-          height: 1px;
-        }
-
-        &--text {
+        &__back {
+          font-size: 28px;
+          margin-top: 5px;
           color: $c-white;
-          margin: 0;
-          font-size: pxToRem(14);
+          font-weight: $f-weight-xs;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
         }
-       }
+
+        &__cross {
+          font-size: 50px;
+          color: $c-white;
+          -ms-flex-item-align: end;
+          align-self: flex-end;
+          font-weight: $f-weight-xs;
+        }
+      }
+
+      &__wrapper {
+        &--btn {
+          cursor: pointer;
+          width: 90px;
+          height: 90px;
+          margin: 10px;
+          border-radius: 10px;
+          @include createFlex(flex, center, flex-start, column);
+          padding: 20px 20px 5px 20px;
+          color: $c-white;
+
+          &--icon {
+            @include createBg(center, no-repeat, contain);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+          }
+
+          &--line {
+            width: 95px;
+            height: 1px;
+          }
+
+          &--text {
+            color: $c-white;
+            margin: 0;
+            font-size: pxToRem(14);
+          }
+        }
       }
     }
-    
   }
 }
 
@@ -158,19 +163,24 @@
       flex-direction: column;
       height: 90%;
       width: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
 
       .select {
         width: 100%;
         height: 70%;
 
-        &__gradient{
+        &__gradient {
           z-index: 1;
           position: absolute;
           top: -150px;
           width: 10%;
           height: 150px;
+          -webkit-box-shadow: 0px -30px 90px 130px #d9198f;
           box-shadow: 0px -30px 90px 130px #d9198f;
           background: #d9198f;
           opacity: 0.8;
@@ -205,7 +215,6 @@
             margin-right: auto;
             left: 0;
             right: 0;
-            
           }
         }
 
@@ -231,9 +240,11 @@
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
+          -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
-          
 
           &--btn {
             width: 75px;
@@ -241,8 +252,7 @@
             margin: 5px;
             padding: 15px 15px 5px 15px;
 
-
-           &--icon {
+            &--icon {
               width: 40px;
               height: 40px;
             }
@@ -257,16 +267,18 @@
             }
           }
         }
-        .links{
+        .links {
           width: 90%;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
           justify-content: space-between;
           position: absolute;
           top: 0;
-          left: 0; 
-          right: 0; 
-          margin-left: auto; 
-          margin-right: auto; 
-          }
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
   }
@@ -275,24 +287,28 @@
 @media (max-width: $break-mobile-xs) {
   .score {
     .wrapper {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-      
-    .select{
-      &__gradient{
-        top: -150px;
-        box-shadow: 0px 0px 90px 90px #d9198f;
-        opacity: 0.8;
+      width: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      .select {
+        &__gradient {
+          top: -150px;
+          -webkit-box-shadow: 0px 0px 90px 90px #d9198f;
+          box-shadow: 0px 0px 90px 90px #d9198f;
+          opacity: 0.8;
+        }
       }
-    }
 
       .categories {
         &__wrapper {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
-          
 
           &--btn {
             max-width: 60px;
@@ -321,15 +337,17 @@
             }
           }
         }
-        .links{
+        .links {
           width: 85%;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
           justify-content: space-between;
           position: absolute;
-          left: 0; 
-          right: 0; 
-          margin-left: auto; 
-          margin-right: auto; 
-          }
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
   }

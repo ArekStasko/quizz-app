@@ -9,66 +9,74 @@
     height: 70%;
     @include createFlex(flex, space-between, center, column);
 
-    .links{
+    .links {
       width: 100px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -ms-flex-item-align: end;
       align-self: flex-end;
-      
-      &__back{
+
+      &__back {
         font-size: 30px;
         margin-top: 5px;
         color: $c-white;
         font-weight: $f-weight-xs;
-        transform: rotate(45deg);    
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
         cursor: pointer;
       }
-      &__cross{
+      &__cross {
         font-size: 50px;
         color: $c-white;
+        -ms-flex-item-align: end;
         align-self: flex-end;
         font-weight: $f-weight-xs;
       }
     }
 
-   .header {
+    .header {
       @include createFlex(flex, center, center, column);
-    
 
-    &__logo {
-      background-image: url("../../../../assets/quiz_logo.png");
-      @include createBg(center, no-repeat, contain);
-      width: 200px;
-      height: 60px;
-    }
+      &__logo {
+        background-image: url("../../../../assets/quiz_logo.png");
+        @include createBg(center, no-repeat, contain);
+        width: 200px;
+        height: 60px;
+      }
 
-    &__text {
-      width: 100%;
-      @include createFlex(flex, center, center);
-    
+      &__text {
+        width: 100%;
+        @include createFlex(flex, center, center);
 
-    &--shadow {
-      width: 500px;
-      height: 50px;
-      @include createFlex(flex, center, center);
-    }
+        &--shadow {
+          width: 500px;
+          height: 50px;
+          @include createFlex(flex, center, center);
+        }
 
-    &--number {
-      width: 80px;
-      height: 80px;
-      border-radius: 60px;
-      @include createFlex(flex, center, center);
-      border: 1px solid rgb(230, 228, 228);
+        &--number {
+          width: 80px;
+          height: 80px;
+          border-radius: 60px;
+          @include createFlex(flex, center, center);
+          border: 1px solid rgb(230, 228, 228);
 
-      p {
-        span {
-          color: $-c-pink;
+          p {
+            span {
+              color: $-c-pink;
+            }
+          }
         }
       }
     }
-   }
-  }
 
     &--question {
       font-size: pxToRem(20);
@@ -89,7 +97,7 @@
         border-radius: 10px;
         @include createFlex(flex, center, center);
 
-        &::before{
+        &::before {
           position: absolute;
           z-index: -1;
           content: "";
@@ -98,11 +106,13 @@
           bottom: 0;
           left: 0;
           border-radius: 10px;
+          -webkit-transition: all 500ms linear;
+          -o-transition: all 500ms linear;
           transition: all 500ms linear;
-          opacity: 0;    
+          opacity: 0;
         }
 
-        p{
+        p {
           pointer-events: none;
         }
       }
@@ -115,7 +125,10 @@
     &__wrapper {
       width: 80%;
       .header {
-        &__text { 
+        &__text {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
 
           &--shadow {
@@ -138,7 +151,7 @@
           height: 40px;
         }
 
-        &__gradient{
+        &__gradient {
           z-index: 1;
           position: absolute;
           top: -150px;
@@ -153,30 +166,31 @@
           width: 280px;
           height: 50px;
           margin: 10px;
-
         }
       }
 
-      .links{
+      .links {
         z-index: 1;
         width: 95%;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+      }
     }
-   }
   }
 }
-
 
 @media (max-width: $break-mobile-xs) {
   .select {
     &__wrapper {
       .header {
-        &__gradient{
+        &__gradient {
           top: -150px;
+          -webkit-box-shadow: 0px 0px 90px 90px #d9198f;
           box-shadow: 0px 0px 90px 90px #d9198f;
           opacity: 0.8;
         }
       }
-   }
+    }
   }
 }

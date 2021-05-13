@@ -1,14 +1,13 @@
-.drop_place{
-    width: 350px;
-    min-height: 120px;
-    border-radius: 10px;
+.drop_place {
+  width: 350px;
+  min-height: 120px;
+  border-radius: 10px;
 }
 
-@media (max-width: $break-mobile){
-    .drop_place{
-        width: 300px;
-        min-height: 90px;
-        border-radius: 10px;
-    }
-    
+@media (max-width: $break-mobile) {
+  .drop_place {
+    width: 300px;
+    min-height: 90px;
+    border-radius: 10px;
+  }
 }
