@@ -1,6 +1,7 @@
 /* Colors */ 
-$c-white: white;
+$c-white: #ffff;
 $-c-pink: rgb(143, 108, 209);
+
 /* Fonts */
 
 $f-baseFontFamily: "Roboto", sans-serif;
@@ -14,6 +15,23 @@ $break-mobile: 768px;
 $break-laptop: 1025px;
 $break-high: 1441px;
 
+/* Grid */
+$wrapper-l: 70%;
+$wrapper-xl: 80%;
+$wrapper-xxl: 90%;
+$wrapper-full: 100%;
+
+/* Grid pixels */
+
+$size-xs: 20px;
+$size-m: 30px;
+$size-l: 50px;
+$size-xl: 60px;
+$size-xxl: 70px;
+$size-full: 100px;
+
 /* Margins, Paddings */
 
 $space-zero: 0px;
+$space-xxs: 5px;
+$space-xs: 10px;

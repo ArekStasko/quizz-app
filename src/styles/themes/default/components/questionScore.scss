@@ -1,30 +1,30 @@
 .score {
-  width: 100%;
+  width: $wrapper-full;
   height: 100vh;
   @include createBg(center, no-repeat, cover);
   @include createFlex(flex, center, center, column);
 
   .wrapper {
     @include createFlex(flex, center, flex-end);
-    width: 80%;
+    width: $wrapper-xl;
 
     .select {
       @include createFlex(flex, space-evenly, center, column);
-      width: 70%;
-      height: 100%;
+      width: $wrapper-l;
+      height: $wrapper-full;
 
       &__logo {
         z-index: 2;
         background-image: url("../../../../assets/quiz_logo.png");
         @include createBg(center, no-repeat, contain);
-        width: 210px;
-        height: 60px;
+        width: 2$space-xs;
+        height: $size-xl;
       }
 
       &__icon {
         @include createBg(center, no-repeat, contain);
-        width: 60px;
-        height: 60px;
+        width: $size-xl;
+        height: $size-xl;
       }
 
       &__line {
@@ -56,15 +56,15 @@
           right: 52%;
           @include createFlex(flex, center, center);
           border: 1px solid $c-white;
-          border-radius: 100px;
+          border-radius: $size-full;
           font-size: pxToRem(25);
         }
       }
 
       &__btn {
         width: 250px;
-        padding: 10px;
-        border-radius: 10px;
+        padding: $space-xs;
+        border-radius: $space-xs;
         cursor: pointer;
         font-weight: $f-weight-xs;
 
@@ -73,8 +73,8 @@
           color: $c-white;
 
           div {
-            width: 50px;
-            height: 50px;
+            width: $size-l;
+            height: $size-l;
             @include createBg(center, no-repeat, cover);
           }
         }
@@ -85,7 +85,7 @@
       @include createFlex(flex, space-between, none, column);
 
       .links {
-        width: 100px;
+        width: $size-full;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -99,21 +99,21 @@
         align-self: flex-end;
 
         &__back {
-          font-size: 28px;
-          margin-top: 5px;
-          color: $c-white;
-          font-weight: $f-weight-xs;
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+          width: $size-xs;
+          height: $size-xs;
+          margin-right: $space-xs;
+          background-image: url("../../../../assets/quiz_back.png");
+          @include createBg(center, no-repeat, contain);
         }
 
         &__cross {
-          font-size: 50px;
-          color: $c-white;
+          width: $size-xs;
+          height: $size-xs;
+          margin-right: $space-xs;
+          background-image: url("../../../../assets/quiz_cross.png");
+          @include createBg(center, no-repeat, contain);
           -ms-flex-item-align: end;
           align-self: flex-end;
-          font-weight: $f-weight-xs;
         }
       }
 
@@ -122,10 +122,10 @@
           cursor: pointer;
           width: 90px;
           height: 90px;
-          margin: 10px;
-          border-radius: 10px;
+          margin: $space-xs;
+          border-radius: $space-xs;
           @include createFlex(flex, center, flex-start, column);
-          padding: 20px 20px 5px 20px;
+          padding: $size-xs $size-xs 5px $size-xs;
           color: $c-white;
 
           &--icon {
@@ -133,9 +133,9 @@
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
+            width: $size-l;
+            height: $size-l;
+            margin-bottom: $space-xs;
           }
 
           &--line {
@@ -161,8 +161,8 @@
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
-      height: 90%;
-      width: 100%;
+      height: $wrapper-xxl;
+      width: $wrapper-full;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
@@ -171,8 +171,8 @@
       align-items: center;
 
       .select {
-        width: 100%;
-        height: 70%;
+        width: $wrapper-full;
+        height: $wrapper-l;
 
         &__gradient {
           z-index: 1;
@@ -188,14 +188,14 @@
 
         &__logo {
           width: 190px;
-          height: 50px;
-          top: 20px;
+          height: $size-l;
+          top: $size-xs;
           position: absolute;
         }
 
         &__icon {
-          width: 70px;
-          height: 70px;
+          width: $size-xxl;
+          height: $size-xxl;
         }
 
         &__result {
@@ -209,8 +209,8 @@
           }
 
           &--result {
-            width: 100px;
-            height: 100px;
+            width: $size-full;
+            height: $size-full;
             margin-left: auto;
             margin-right: auto;
             left: 0;
@@ -249,12 +249,12 @@
           &--btn {
             width: 75px;
             height: 75px;
-            margin: 5px;
+            margin: $space-xxs;
             padding: 15px 15px 5px 15px;
 
             &--icon {
-              width: 40px;
-              height: 40px;
+              width: $size-m;
+              height: $size-m;
             }
 
             &--line {
@@ -268,7 +268,7 @@
           }
         }
         .links {
-          width: 90%;
+          width: $wrapper-xxl;
           -webkit-box-pack: justify;
           -ms-flex-pack: justify;
           justify-content: space-between;
@@ -287,7 +287,7 @@
 @media (max-width: $break-mobile-xs) {
   .score {
     .wrapper {
-      width: 100%;
+      width: $wrapper-full;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
@@ -311,9 +311,9 @@
           display: flex;
 
           &--btn {
-            max-width: 60px;
-            max-height: 60px;
-            margin: 5px;
+            max-width: $size-xl;
+            max-height: $size-xl;
+            margin: $space-xxs;
             padding: 0;
             -webkit-box-pack: center;
             -ms-flex-pack: center;

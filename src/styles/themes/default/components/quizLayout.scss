@@ -1,5 +1,5 @@
 .start {
-  width: 100%;
+  width: $wrapper-full;
   height: 100vh;
   @include createBg(center, no-repeat, cover);
   @include createFlex(flex, flex-start, center, column);
@@ -7,12 +7,12 @@
 
   .wrapper {
     width: 50%;
-    height: 70%;
+    height: $wrapper-l;
     @include createFlex(flex, space-evenly, center, column);
     font-weight: $f-weight-xs;
 
     &__links {
-      width: 100px;
+      width: $size-full;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -26,21 +26,20 @@
       align-self: flex-end;
 
       &--back {
-        font-size: 30px;
-        margin-top: 5px;
-        color: $c-white;
-        font-weight: $f-weight-xs;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
+        width: $size-xs;
+        height: $size-xs;
+        margin-right: $space-xs;
+        background-image: url("../../../../assets/quiz_back.png");
+        @include createBg(center, no-repeat, contain);
       }
 
       &--cross {
-        font-size: 50px;
-        color: $c-white;
+        width: $size-xs;
+        height: $size-xs;
         -ms-flex-item-align: end;
         align-self: flex-end;
-        font-weight: $f-weight-xs;
+        background-image: url("../../../../assets/quiz_cross.png");
+        @include createBg(center, no-repeat, contain);
       }
     }
 
@@ -52,13 +51,13 @@
         background-image: url("../../../../assets/quiz_logo.png");
         @include createBg(center, no-repeat, contain);
         width: 200px;
-        height: 60px;
+        height: $size-xl;
       }
 
       &--header {
         @include createFlex(flex, center, center);
         width: 600px;
-        height: 50px;
+        height: $size-l;
         font-size: pxToRem(20);
       }
     }
@@ -68,21 +67,21 @@
 
       &--icon {
         @include createBg(center, no-repeat, contain);
-        width: 70px;
-        height: 70px;
+        width: $size-xxl;
+        height: $size-xxl;
       }
 
       &--title {
         @include createFlex(flex, center, center, column);
-        margin-top: 5px;
+        margin-top: $space-xxs;
         div {
-          width: 170px;
+          width: 1$size-xxl;
           height: 1px;
-          margin-top: 5px;
+          margin-top: $space-xxs;
         }
 
         p {
-          margin-top: 5px;
+          margin-top: $space-xxs;
           margin-bottom: 0;
           font-size: pxToRem(25);
         }
@@ -94,8 +93,8 @@
       z-index: 1;
       width: 250px;
       @include createFlex(flex, space-around, center);
-      padding: 10px;
-      border-radius: 10px;
+      padding: $space-xs;
+      border-radius: $space-xs;
       cursor: pointer;
 
       &::before {
@@ -105,7 +104,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        border-radius: 10px;
+        border-radius: $space-xs;
         z-index: -1;
         -webkit-transition: all 300ms linear;
         -o-transition: all 300ms linear;
@@ -114,8 +113,8 @@
       }
 
       div {
-        width: 50px;
-        height: 50px;
+        width: $size-l;
+        height: $size-l;
         @include createBg(center, no-repeat, cover);
       }
     }
@@ -125,7 +124,7 @@
 @media (max-width: $break-mobile) {
   .start {
     .wrapper {
-      width: 80%;
+      width: $wrapper-xl;
 
       &__logo {
         z-index: 2;
@@ -133,7 +132,7 @@
         top: 0;
 
         &--logo {
-          width: 140px;
+          width: 1$size-m;
           height: 90px;
         }
 
@@ -143,7 +142,7 @@
       }
       &__links {
         z-index: 1;
-        width: 100%;
+        width: $wrapper-full;
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;

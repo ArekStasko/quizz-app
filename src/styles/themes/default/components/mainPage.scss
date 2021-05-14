@@ -1,5 +1,5 @@
 .page {
-  width: 100%;
+  width: $wrapper-full;
   height: 100vh;
   background-image: url("../../../../assets/choose_background.png");
   @include createBg(center, no-repeat, cover);
@@ -14,7 +14,7 @@
     background-image: url("../../../../assets/quiz_logo.png");
     @include createBg(center, no-repeat, contain);
     width: 200px;
-    height: 60px;
+    height: $size-xl;
   }
 
   &__quiz-header {
@@ -43,7 +43,7 @@
     );
     @include createFlex(flex, center, center);
     width: 600px;
-    height: 50px;
+    height: $size-l;
     font-size: pxToRem(20);
   }
 
@@ -117,13 +117,13 @@
       }
 
       &--line {
-        width: 100px;
+        width: $size-full;
         height: 1px;
         background-color: $-c-pink;
       }
 
       p {
-        margin-top: 5px;
+        margin-top: $space-xxs;
       }
     }
   }
@@ -131,11 +131,11 @@
 
 @media (max-width: 768px) {
   .page {
-    max-width: 100%;
+    max-width: $wrapper-full;
     background-image: url("../../../../assets/background_1.png");
 
     &__wrapper {
-      max-height: 100%;
+      max-height: $wrapper-full;
     }
 
     &__quiz-logo {
@@ -143,8 +143,8 @@
     }
 
     &__quiz-header {
-      width: 100%;
-      height: 60px;
+      width: $wrapper-full;
+      height: $size-xl;
       font-size: pxToRem(15);
     }
 
@@ -158,7 +158,7 @@
         max-width: 90px;
         max-height: 90px;
         font-size: 15px;
-        margin: 10px;
+        margin: $space-xs;
 
         &--line {
           max-width: 90px;
